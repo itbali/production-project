@@ -10,3 +10,14 @@
 
   min-height: 100vh;
 }
+
+$btnW: 40px;
+$btnMargin: 8px;
+$btnBG: #d95b5b;
+
+.btn {
+  width: calc($btnW * 3);
+  margin: $btnMargin;
+  background-color: $btnBG;
+  color: lighten($btnBG, 30);
+}

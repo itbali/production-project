@@ -11,21 +11,36 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
                 loader: "css-loader",
                 options: {
                     modules: {
-                        auto: (resourcePath: string) => Boolean(resourcePath.includes('module')),
-                        localIdentName:
-                            isDev
-                                ? '[path]__[name]___[local]'
-                                : '[path]__[name]___[hash:base64:5]',
+                        auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+                        localIdentName: isDev
+                            ? '[path][name]__[local]--[hash:base64:5]'
+                            : '[hash:base64:8]'
                     },
                 }
             },
-            {
-                loader: "sass-loader",
-                options: {
-                    implementation: require("sass"),
-                },
-            },
+            "sass-loader",
         ]
+        //     [
+        //     isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+        //     {
+        //         loader: "css-loader",
+        //         options: {
+        //             modules: {
+        //                 auto: (resourcePath: string) => Boolean(resourcePath.includes('.module.')),
+        //                 localIdentName:
+        //                     isDev
+        //                         ? '[path]__[name]___[local]'
+        //                         : '[path]__[name]___[hash:base64:5]',
+        //             },
+        //         }
+        //     },
+        //     {
+        //         loader: "sass-loader",
+        //         options: {
+        //             implementation: require("sass"),
+        //         },
+        //     },
+        // ]
     }
 
     const typescriptLoader: webpack.RuleSetRule = {
