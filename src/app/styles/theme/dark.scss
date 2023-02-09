@@ -1,8 +1,11 @@
-$dark-color: #0e0032;
 .app.dark {
 
-  --bg-color: $dark-color;
+  --bg-color: #0e0032;
+  --inverted-bg-color: #e8daee;
 
-  --primary-color: lighten($dark-color, 70);
-  --secondary-color: lighten($dark-color, 40);
+  --primary-color: #a8a0cd;
+  --secondary-color: #534175;
+
+  --inverted-primary-color: #685474;
+  --inverted-secondary-color: #3d2b48;
 }

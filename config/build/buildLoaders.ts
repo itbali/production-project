@@ -3,6 +3,21 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import {BuildOptions} from "./types/config";
 
 export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
+    const fileLoader: webpack.RuleSetRule =
+        {
+            test: /\.(png|jpe?g|gif|woff|woff2)$/i,
+            use: [
+                {
+                    loader: 'file-loader',
+                },
+            ],
+        }
+
+    const svgLoader: webpack.RuleSetRule = {
+        test: /\.svg$/,
+        use: [`@svgr/webpack`],
+    }
+
     const scssLoader: webpack.RuleSetRule = {
         test: /\.s[ac]ss$/i,
         use: [
@@ -20,27 +35,6 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
             },
             "sass-loader",
         ]
-        //     [
-        //     isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-        //     {
-        //         loader: "css-loader",
-        //         options: {
-        //             modules: {
-        //                 auto: (resourcePath: string) => Boolean(resourcePath.includes('.module.')),
-        //                 localIdentName:
-        //                     isDev
-        //                         ? '[path]__[name]___[local]'
-        //                         : '[path]__[name]___[hash:base64:5]',
-        //             },
-        //         }
-        //     },
-        //     {
-        //         loader: "sass-loader",
-        //         options: {
-        //             implementation: require("sass"),
-        //         },
-        //     },
-        // ]
     }
 
     const typescriptLoader: webpack.RuleSetRule = {
@@ -49,8 +43,28 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/,
     }
 
+    const babelLoader: webpack.RuleSetRule = {
+        test: /\.(js|ts|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env'],
+                "plugins": [
+                    ["i18next-extract", {
+                        locales: ['ru', 'en'],
+                        keyAsDefaultValue: true,
+                    }],
+                ]
+            },
+        },
+
+    }
     return [
+        babelLoader,
         typescriptLoader,
         scssLoader,
+        svgLoader,
+        fileLoader
     ]
 }

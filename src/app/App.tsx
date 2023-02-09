@@ -1,19 +1,26 @@
-import {NavLink} from 'react-router-dom';
-
 import './styles/index.scss'
 import {useTheme} from "app/providers/themeProvider";
 import {classNames} from "helpers/classNames";
 import {AppRouter} from "app/providers/router";
+import {NavBar} from "widgets/NavBar/ui/NavBar";
+import {SideBar} from "widgets/SideBar";
+
+import 'shared/config/i18n/i18n'
+import {Suspense} from "react";
+
 
 const App = () => {
-    const {theme, toggleTheme} = useTheme()
+    const {theme} = useTheme()
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <button className={'btn'} onClick={toggleTheme}>toggle</button>
-            <NavLink to={'/'}>main page</NavLink>
-            <NavLink to={'/about'}>about page</NavLink>
-            <AppRouter/>
+            <Suspense fallback={<div>...</div>}>
+                <NavBar/>
+                <div className={'content-page'}>
+                    <SideBar/>
+                    <AppRouter/>
+                </div>
+            </Suspense>
         </div>
     );
 };

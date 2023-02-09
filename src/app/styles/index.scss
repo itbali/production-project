@@ -8,6 +8,7 @@
   background: var(--bg-color);
   color: var(--secondary-color);
 
+  transition: 0.3s;
   min-height: 100vh;
 }
 
@@ -20,4 +21,14 @@ $btnBG: #d95b5b;
   margin: $btnMargin;
   background-color: $btnBG;
   color: lighten($btnBG, 30);
+}
+
+.content-page {
+  display: flex;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+  padding: 20px;
+  transition: 0.3s;
 }
