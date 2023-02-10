@@ -1,11 +1,11 @@
-import {classNames} from "helpers/classNames";
-import cls from './Button.module.scss'
-import {ButtonHTMLAttributes, FC} from "react";
-import {ValueOf} from "helpers/ValueOf";
+import { classNames } from 'helpers/classNames';
+import { ButtonHTMLAttributes, FC } from 'react';
+import { ValueOf } from 'helpers/ValueOf';
+import cls from './Button.module.scss';
 
 export const ThemeButton = {
     CLEAR: 'clear',
-} as const
+} as const;
 export type ThemeButtonType = ValueOf<typeof ThemeButton>
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -19,12 +19,14 @@ export const Button: FC<ButtonProps> = (props) => {
         children,
         theme,
         ...rest
-    } = props
+    } = props;
     return (
         <button
+            type="button"
             className={classNames(cls.navbar, {}, [className, cls[theme]])}
             {...rest}
-        >{children}
+        >
+            {children}
         </button>
     );
 };

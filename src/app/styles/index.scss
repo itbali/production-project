@@ -2,33 +2,33 @@
 @import "./variables/global";
 @import "./theme/dark";
 @import "./theme/light";
+@use "sass:color";
 
 .app {
-  font: var(--font-m);
-  background: var(--bg-color);
-  color: var(--secondary-color);
-
-  transition: 0.3s;
-  min-height: 100vh;
+    font: var(--font-m);
+    background: var(--bg-color);
+    color: var(--secondary-color);
+    transition: 0.3s;
+    min-height: 100vh;
 }
 
-$btnW: 40px;
-$btnMargin: 8px;
-$btnBG: #d95b5b;
+$btn-width: 40px;
+$btn-margin: 8px;
+$btn-background: #d95b5b;
 
 .btn {
-  width: calc($btnW * 3);
-  margin: $btnMargin;
-  background-color: $btnBG;
-  color: lighten($btnBG, 30);
+    width: calc($btn-width * 3);
+    margin: $btn-margin;
+    background-color: $btn-background;
+    color: color.adjust($btn-background, $lightness:30%);
 }
 
 .content-page {
-  display: flex;
+    display: flex;
 }
 
 .page-wrapper {
-  flex-grow: 1;
-  padding: 20px;
-  transition: 0.3s;
+    flex-grow: 1;
+    padding: 20px;
+    transition: 0.3s;
 }
