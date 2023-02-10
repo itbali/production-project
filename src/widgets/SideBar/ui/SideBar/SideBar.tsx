@@ -1,4 +1,4 @@
-import { classNames } from 'helpers/classNames';
+import { classNames } from 'helpers/classNames/classNames';
 import { useState } from 'react';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
@@ -16,8 +16,21 @@ export function SideBar({ className }: SideBarProps) {
         setCollapsed((prevState) => !prevState);
     };
     return (
-        <div className={classNames(cls.SideBar, { [cls.collapsed]: collapsed }, [className])}>
-            <button type="button" onClick={onToggle}>{t('toggle-sidebar')}</button>
+        <div
+            className={
+                classNames(
+                    cls.SideBar,
+                    { [cls.collapsed]: collapsed },
+                    [className],
+                )
+            }
+        >
+            <button
+                type="button"
+                onClick={onToggle}
+            >
+                {t('toggle-sidebar')}
+            </button>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher />

@@ -1,15 +1,15 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest": true
   },
   "extends": [
     "airbnb",
     "airbnb/hooks",
     "plugin:@typescript-eslint/recommended"
   ],
-  "overrides": [
-  ],
+  "overrides": [],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -37,6 +37,7 @@
     "indent": ["error", 4, { "SwitchCase": 1 }],
     "react/jsx-indent": [ "error", 4, { "indentLogicalExpressions": true }],
     "react/jsx-indent-props": [2,4],
-    "react/jsx-filename-extension": [1, { "extensions": [".tsx",".ts"]}]
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx",".ts"]}],
+    "max-len": ["error", { "ignoreComments": true }]
   }
 }
