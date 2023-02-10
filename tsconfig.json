@@ -21,11 +21,11 @@
       "module": "CommonJS"
     }
   },
-  "exclude": [
-    "node_modules",
-    "build"
-  ],
-  "include": [
-    "config/jest/jest.config.ts"
-  ]
+//  "exclude": [
+//    "node_modules",
+//    "build"
+//  ],
+//  "include": [
+//    "config/jest/jest.config.ts"
+//  ]
 }

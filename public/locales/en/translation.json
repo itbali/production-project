@@ -4,5 +4,6 @@
   "toggle-sidebar": "toggle",
   "logo": "LOGO",
   "mainPage": "main page",
-  "aboutPage": "about page"
+  "aboutPage": "about page",
+  "notFoundPage.title": "Page not found"
 }

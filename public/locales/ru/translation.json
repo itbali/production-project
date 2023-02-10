@@ -4,5 +4,6 @@
   "toggle-sidebar": "сайдбар",
   "logo": "ЛОГО",
   "aboutPage": "о нас",
-  "mainPage": "главная"
+  "mainPage": "главная",
+  "notFoundPage.title": "Страница не найдена"
 }
