@@ -1,8 +1,8 @@
+@use "sass:color";
 @import "reset";
 @import "./variables/global";
 @import "./theme/dark";
 @import "./theme/light";
-@use "sass:color";
 
 .app {
     font: var(--font-m);

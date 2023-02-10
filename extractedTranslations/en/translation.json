@@ -5,5 +5,8 @@
   "logo": "logo",
   "main-page": "main-page",
   "mainPage": "mainPage",
+  "notFoundPage": {
+    "title": "title"
+  },
   "toggle-sidebar": "toggle-sidebar"
 }

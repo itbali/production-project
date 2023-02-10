@@ -3,9 +3,9 @@ import { BuildOptions } from './types/config';
 
 export function buildResolvers(options: BuildOptions): ResolveOptions {
     return {
-        extensions: ['.tsx', '.ts', '.js', '.jsx'],
+        extensions: ['.tsx', '.ts', '.js'],
         preferRelative: true,
-        mainFiles: ['index.ts', 'index.tsx', 'index.js', 'index.jsx'],
+        mainFiles: ['index'],
         modules: [
             options.paths.src,
             'node_modules',
