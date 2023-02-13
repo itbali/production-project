@@ -5,5 +5,7 @@
   "logo": "LOGO",
   "mainPage": "main page",
   "aboutPage": "about page",
-  "notFoundPage.title": "Page not found"
+  "notFoundPage.title": "Page not found",
+  "error": "Error has occurred",
+  "reload": "reload"
 }

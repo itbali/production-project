@@ -1,4 +1,4 @@
-import { classNames } from 'helpers/classNames/classNames';
+import { classNames } from 'helpers/classNames/ui/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';

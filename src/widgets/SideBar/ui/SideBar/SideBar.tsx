@@ -1,4 +1,4 @@
-import { classNames } from 'helpers/classNames/classNames';
+import { classNames } from 'helpers/classNames/ui/classNames';
 import { useState } from 'react';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';

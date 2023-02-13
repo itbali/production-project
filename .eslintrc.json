@@ -38,6 +38,15 @@
     "react/jsx-indent": [ "error", 4, { "indentLogicalExpressions": true }],
     "react/jsx-indent-props": [2,4],
     "react/jsx-filename-extension": [1, { "extensions": [".tsx",".ts"]}],
-    "max-len": ["error", { "ignoreComments": true }]
+    "max-len": ["error",
+      {
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true,
+        "code": 100
+      }
+    ]
   }
 }

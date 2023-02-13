@@ -5,11 +5,14 @@
 @import "./theme/light";
 
 .app {
-    font: var(--font-m);
-    background: var(--bg-color);
-    color: var(--secondary-color);
-    transition: 0.3s;
     min-height: 100vh;
+
+    font: var(--font-m);
+    color: var(--secondary-color);
+
+    background: var(--bg-color);
+
+    transition: 0.3s;
 }
 
 $btn-width: 40px;
@@ -19,8 +22,8 @@ $btn-background: #d95b5b;
 .btn {
     width: calc($btn-width * 3);
     margin: $btn-margin;
-    background-color: $btn-background;
     color: color.adjust($btn-background, $lightness:30%);
+    background-color: $btn-background;
 }
 
 .content-page {

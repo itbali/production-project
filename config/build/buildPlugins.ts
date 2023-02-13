@@ -26,7 +26,7 @@ export function buildPlugins(
     new webpack.DefinePlugin({
         __IS_DEV__: isDev,
     }),
-    new ReactRefreshWebpackPlugin(),
+    new ReactRefreshWebpackPlugin({ overlay: false }),
     new webpack.HotModuleReplacementPlugin(),
     ];
 }

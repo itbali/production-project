@@ -1,6 +1,7 @@
 {
   "about-page": "about-page",
   "aboutPage": "aboutPage",
+  "error": "error",
   "language": "language",
   "logo": "logo",
   "main-page": "main-page",
@@ -8,5 +9,6 @@
   "notFoundPage": {
     "title": "title"
   },
+  "reload": "reload",
   "toggle-sidebar": "toggle-sidebar"
 }
