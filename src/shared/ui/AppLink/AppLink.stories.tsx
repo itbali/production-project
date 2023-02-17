@@ -1,0 +1,43 @@
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+
+import { Theme } from 'app/providers/themeProvider';
+import { AppLink as AppLinkComponent, AppLinkTheme } from './AppLink';
+import { ThemeDecorator } from '../../../../config/.storybook/decorators/themeDecorator';
+
+export default {
+    title: 'widgets/AppLink',
+    component: AppLinkComponent,
+    argTypes: {
+        children: {
+            control: {
+                type: 'text',
+            },
+            defaultValue: 'Link',
+        },
+        theme: {
+            control: {
+                type: 'select',
+                options: [AppLinkTheme.PRIMARY, AppLinkTheme.SECONDARY],
+            },
+        },
+    },
+    args: {
+        to: '/',
+    },
+} as ComponentMeta<typeof AppLinkComponent>;
+
+const Template: ComponentStory<typeof AppLinkComponent> = (args) => <AppLinkComponent {...args} />;
+
+export const AppLink = Template.bind({});
+export const AppLinkSecondary = Template.bind({});
+AppLinkSecondary.args = {
+    theme: AppLinkTheme.SECONDARY,
+};
+export const AppLinkDark = Template.bind({});
+AppLinkDark.decorators = [ThemeDecorator(Theme.DARK)];
+export const AppLinkDarkSecondary = Template.bind({});
+AppLinkDarkSecondary.decorators = [ThemeDecorator(Theme.DARK)];
+AppLinkDarkSecondary.args = {
+    theme: AppLinkTheme.SECONDARY,
+};

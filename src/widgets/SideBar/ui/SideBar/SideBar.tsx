@@ -17,6 +17,7 @@ export function SideBar({ className }: SideBarProps) {
     };
     return (
         <div
+            data-testid="sidebar"
             className={
                 classNames(
                     cls.SideBar,
@@ -26,6 +27,7 @@ export function SideBar({ className }: SideBarProps) {
             }
         >
             <button
+                data-testid="sidebar-toggle"
                 type="button"
                 onClick={onToggle}
             >

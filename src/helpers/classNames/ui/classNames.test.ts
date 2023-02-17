@@ -1,4 +1,4 @@
-import { classNames } from './classNames';
+import { classNames } from 'helpers/classNames';
 
 describe('classNames', () => {
     it(' should add class names', () => {

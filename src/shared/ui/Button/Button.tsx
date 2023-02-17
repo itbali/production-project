@@ -5,6 +5,7 @@ import cls from './Button.module.scss';
 
 export const ThemeButton = {
     CLEAR: 'clear',
+    OUTLINE: 'outline',
 } as const;
 export type ThemeButtonType = ValueOf<typeof ThemeButton>
 
@@ -23,7 +24,7 @@ export const Button: FC<ButtonProps> = (props) => {
     return (
         <button
             type="button"
-            className={classNames(cls.navbar, {}, [className, cls[theme]])}
+            className={classNames(cls.Button, {}, [className, cls[theme]])}
             {...rest}
         >
             {children}
