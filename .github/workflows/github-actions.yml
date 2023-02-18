@@ -21,7 +21,7 @@ jobs:
       - name: install modules
         run: npm install
       - name: build production project
-        run: npm build:prod
+        run: npm run build:prod
       - name: eslint tests
         run: npm run lint
       - name: stylelint tests
