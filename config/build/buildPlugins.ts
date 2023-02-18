@@ -16,22 +16,28 @@ import { BuildOptions } from './types/config';
 export function buildPlugins(
     { paths, isDev }: BuildOptions,
 ): webpack.WebpackPluginInstance[] {
-    return [new HtmlWebpackPlugin({
-        template: paths.html,
-    }),
-    new webpack.ProgressPlugin(),
-    new MiniCssExtractPlugin({
-        filename: 'css/[name].[contenthash:8].css',
-        chunkFilename: 'css/[name].[id].[contenthash:8].css',
-    }),
-    new webpack.DefinePlugin({
-        __IS_DEV__: isDev,
-    }),
-    new ReactRefreshWebpackPlugin({ overlay: false }),
-    new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin({
-        openAnalyzer: false,
-        analyzerMode: 'static',
-    }),
-    ];
+    const plugins: webpack.WebpackPluginInstance[] = [
+        new HtmlWebpackPlugin({
+            template: paths.html,
+        }),
+            new webpack.ProgressPlugin(),
+            new MiniCssExtractPlugin({
+                filename: 'css/[name].[contenthash:8].css',
+                chunkFilename: 'css/[name].[id].[contenthash:8].css',
+            }),
+            new webpack.DefinePlugin({
+                __IS_DEV__: isDev,
+            }),
+            new ReactRefreshWebpackPlugin({ overlay: false }),
+    ]
+    if (isDev) {
+        plugins.push(new webpack.HotModuleReplacementPlugin())
+        plugins.push(new webpack.NoEmitOnErrorsPlugin())
+        plugins.push(new BundleAnalyzerPlugin({
+            openAnalyzer: false,
+            analyzerMode: 'static',
+        }))
+    }
+
+    return plugins;
 }

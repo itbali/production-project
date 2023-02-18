@@ -21,7 +21,6 @@ describe('Sidebar should ', () => {
     it('be rendered', () => {
         render(<SideBar />);
         const sidebar = screen.getByTestId('sidebar');
-        screen.debug();
         expect(sidebar).toBeInTheDocument();
     });
     it('be rendered and have class collapsed after click', () => {
@@ -30,7 +29,6 @@ describe('Sidebar should ', () => {
         const toggle = screen.getByTestId('sidebar-toggle');
         expect(sidebar).toBeInTheDocument();
         fireEvent.click(toggle);
-        screen.debug();
         expect(sidebar).toHaveClass('collapsed');
     });
 });
