@@ -1,5 +1,5 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: Project CI
+run-name: ${{ github.actor }} is testing project with GitHub Actions 🚀
 on:
   push:
     branches: ["master"]
@@ -7,7 +7,7 @@ on:
     branches: ["master"]
 jobs:
   CI:
-    runs-on: ubuntu-latest
+    runs-on: windows-2019
     strategy:
       matrix:
         node-version: [17.x]
