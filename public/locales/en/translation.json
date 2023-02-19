@@ -1,6 +1,7 @@
 {
   "test translation": "test translation",
   "language": "english",
+  "language-short": "en",
   "toggle-sidebar": "toggle",
   "logo": "LOGO",
   "mainPage": "main page",
