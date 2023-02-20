@@ -2,8 +2,9 @@ import { classNames } from 'helpers/classNames/ui/classNames';
 import { ButtonHTMLAttributes, FC } from 'react';
 import cls from './Button.module.scss';
 
-export enum ButtonTheme {
+export enum Variant {
     CLEAR= 'clear',
+    CLEAR_INVERTED= 'clearInverted',
     OUTLINE= 'outline',
     BACKGROUND= 'background',
     BACKGROUND_INVERTED= 'backgroundInverted',
@@ -19,7 +20,7 @@ export enum ButtonSize {
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string,
     isSquare?: boolean,
-    theme?: ButtonTheme,
+    variant?: Variant,
     size?:ButtonSize,
 }
 
@@ -27,7 +28,7 @@ export const Button: FC<ButtonProps> = (props) => {
     const {
         className,
         children,
-        theme,
+        variant,
         isSquare,
         size = ButtonSize.M,
         ...rest
@@ -40,7 +41,7 @@ export const Button: FC<ButtonProps> = (props) => {
     return (
         <button
             type="button"
-            className={classNames(cls.Button, mods, [className, cls[theme], cls[size]])}
+            className={classNames(cls.Button, mods, [className, cls[variant], cls[size]])}
             {...rest}
         >
             {children}

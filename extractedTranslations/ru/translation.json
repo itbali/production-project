@@ -1,7 +1,9 @@
 {
   "aboutPage": "aboutPage",
+  "enter": "enter",
   "error": "error",
   "language": "language",
+  "language-short": "language-short",
   "language_short": "language_short",
   "logo": "logo",
   "main-page": "main-page",

@@ -10,10 +10,15 @@
     transition: 0.3s;
 }
 
-.clear {
+.clear,
+.clearInverted {
     background: none;
     border: none;
     outline: none;
+}
+
+.clearInverted {
+    color: var(--inverted-primary-color);
 }
 
 .outline {

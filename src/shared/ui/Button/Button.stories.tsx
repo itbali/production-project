@@ -2,21 +2,22 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Theme } from 'app/providers/themeProvider';
-import { Button, ButtonTheme } from './Button';
+import { Button, Variant } from './Button';
 import { ThemeDecorator } from '../../../../config/.storybook/decorators/themeDecorator';
 
 export default {
     title: 'shared/Button',
     component: Button,
     argTypes: {
-        theme: {
+        variant: {
             control: 'select',
             options: [
                 undefined,
-                ButtonTheme.CLEAR,
-                ButtonTheme.OUTLINE,
-                ButtonTheme.BACKGROUND,
-                ButtonTheme.BACKGROUND_INVERTED,
+                Variant.CLEAR,
+                Variant.CLEAR_INVERTED,
+                Variant.OUTLINE,
+                Variant.BACKGROUND,
+                Variant.BACKGROUND_INVERTED,
             ],
         },
         isSquare: {
@@ -61,23 +62,34 @@ PrimaryExtraLarge.args = {
 
 export const Clear = Template.bind({});
 Clear.args = {
-    theme: ButtonTheme.CLEAR,
+    variant: Variant.CLEAR,
 };
 
 export const ClearDark = Template.bind({});
 ClearDark.args = {
-    theme: ButtonTheme.CLEAR,
+    variant: Variant.CLEAR,
 };
 ClearDark.decorators = [ThemeDecorator(Theme.DARK)];
 
+export const ClearInverted = Template.bind({});
+ClearInverted.args = {
+    variant: Variant.CLEAR_INVERTED,
+};
+
+export const ClearInvertedDark = Template.bind({});
+ClearInvertedDark.args = {
+    variant: Variant.CLEAR_INVERTED,
+};
+ClearInvertedDark.decorators = [ThemeDecorator(Theme.DARK)];
+
 export const Outline = Template.bind({});
 Outline.args = {
-    theme: ButtonTheme.OUTLINE,
+    variant: Variant.OUTLINE,
 };
 
 export const OutlineDark = Template.bind({});
 OutlineDark.args = {
-    theme: ButtonTheme.OUTLINE,
+    variant: Variant.OUTLINE,
 };
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
 
@@ -85,13 +97,13 @@ export const Square = Template.bind({});
 Square.args = {
     children: '>',
     isSquare: true,
-    theme: ButtonTheme.BACKGROUND_INVERTED,
+    variant: Variant.BACKGROUND_INVERTED,
 };
 
 export const SquareDark = Template.bind({});
 SquareDark.args = {
     children: '>',
     isSquare: true,
-    theme: ButtonTheme.BACKGROUND_INVERTED,
+    variant: Variant.BACKGROUND_INVERTED,
 };
 SquareDark.decorators = [ThemeDecorator(Theme.DARK)];

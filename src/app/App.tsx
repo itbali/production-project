@@ -1,4 +1,3 @@
-import './styles/index.scss';
 import { useTheme } from 'app/providers/themeProvider';
 import { classNames } from 'helpers/classNames/ui/classNames';
 import { AppRouter } from 'app/providers/router';
@@ -13,7 +12,7 @@ function App() {
     const { theme } = useTheme();
 
     return (
-        <div className={classNames('app', {}, [theme])}>
+        <div id="root-app" className={classNames('app', {}, [theme])}>
             <Suspense fallback={<Spinner />}>
                 <NavBar />
                 <div className="content-page">

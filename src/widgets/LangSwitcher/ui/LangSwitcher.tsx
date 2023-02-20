@@ -1,5 +1,5 @@
 import { classNames } from 'helpers/classNames/ui/classNames';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Button, Variant } from 'shared/ui/Button/Button';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import cls from './LangSwitcher.module.scss';
@@ -20,11 +20,11 @@ export function LangSwitcher(props: LangSwitcherProps) {
     return (
         <Button
             className={classNames(cls.LangSwitcher, {}, [className])}
-            theme={ButtonTheme.CLEAR}
+            variant={Variant.CLEAR}
             onClick={handleTranslation}
         >
             {collapsed
-                ? t('language_short')
+                ? t('language-short')
                 : t('language')}
         </Button>
     );

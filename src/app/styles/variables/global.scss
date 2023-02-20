@@ -1,4 +1,5 @@
 :root {
+    // Font-sizes
     --font-family: consolas, sans-serif;
     --font-size-s: 12px;
     --font-line-s: 20px;
@@ -12,7 +13,19 @@
     --font-size-xl: 32px;
     --font-line-xl: 40px;
     --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family);
+
+    // Measures
     --navbar-height: 50px;
     --sidebar-width: 300px;
     --sidebar-width-collapsed: 80px;
+
+    // Z-index
+    --z-index-modal: 10;
+    --z-index-hidden: -1;
+
+    // Colors
+    --overlay-color: rgb(0 0 0 / 50%);
+
+    // Timers
+    --transition-time: 0.3s;
 }

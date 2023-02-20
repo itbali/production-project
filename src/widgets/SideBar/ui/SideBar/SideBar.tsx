@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
+import { Button, ButtonSize, Variant } from 'shared/ui/Button/Button';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import HomeSVG from 'shared/assets/icons/home.svg';
@@ -32,7 +32,7 @@ export function SideBar({ className }: SideBarProps) {
             }
         >
             <Button
-                theme={ButtonTheme.BACKGROUND_INVERTED}
+                variant={Variant.BACKGROUND_INVERTED}
                 isSquare
                 size={ButtonSize.L}
                 data-testid="sidebar-toggle"

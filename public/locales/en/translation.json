@@ -8,5 +8,6 @@
   "aboutPage": "about page",
   "notFoundPage.title": "Page not found",
   "error": "Error has occurred",
-  "reload": "reload"
+  "reload": "reload",
+  "enter": "Login"
 }
