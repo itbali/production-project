@@ -4,7 +4,7 @@ const config: StorybookConfig = {
     stories: [
         "../../src/**/*.stories.@(js|jsx|ts|tsx)"
     ],
-      addons: [
+    addons: [
         "@storybook/addon-links",
         "@storybook/addon-essentials",
         "@storybook/addon-interactions"
