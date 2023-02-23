@@ -6,6 +6,7 @@
 import path from 'path';
 
 export default {
+    globals: { __IS_DEV__: true },
     testEnvironment: 'jsdom',
     clearMocks: true,
     moduleFileExtensions: [
@@ -20,7 +21,7 @@ export default {
         '\\\\node_modules\\\\',
     ],
     moduleDirectories: [
-        'node_modules'
+        'node_modules', './'
     ],
     rootDir: '../../',
     testMatch: [

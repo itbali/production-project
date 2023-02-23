@@ -9,6 +9,10 @@
     background-color: var(--inverted-bg-color);
 
     transition: 0.3s;
+
+    h2 {
+        color: var(--inverted-primary-color);
+    }
 }
 
 .links {

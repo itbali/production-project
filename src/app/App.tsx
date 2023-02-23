@@ -1,4 +1,3 @@
-import { useTheme } from 'app/providers/themeProvider';
 import { classNames } from 'helpers/classNames/ui/classNames';
 import { AppRouter } from 'app/providers/router';
 import { NavBar } from 'widgets/NavBar/ui/NavBar';
@@ -9,10 +8,8 @@ import { Suspense } from 'react';
 import { Spinner } from 'shared/ui/Spinner';
 
 function App() {
-    const { theme } = useTheme();
-
     return (
-        <div id="root-app" className={classNames('app', {}, [theme])}>
+        <div id="root-app" className={classNames('app')}>
             <Suspense fallback={<Spinner />}>
                 <NavBar />
                 <div className="content-page">

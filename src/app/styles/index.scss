@@ -4,14 +4,14 @@
 @import "./theme/dark";
 @import "./theme/light";
 
+body {
+    font: var(--font-m);
+    color: var(--primary-color);
+}
+
 .app {
     min-height: 100vh;
-
-    font: var(--font-m);
-    color: var(--secondary-color);
-
     background: var(--bg-color);
-
     transition: 0.3s;
 }
 

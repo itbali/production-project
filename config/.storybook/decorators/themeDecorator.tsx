@@ -1,11 +1,20 @@
 import { Story } from '@storybook/react';
-import { classNames } from 'helpers/classNames';
-import { Theme, ThemeProvider } from 'app/providers/themeProvider';
+import { Theme, ThemeProvider, useTheme } from 'app/providers/themeProvider';
+import React from 'react';
 
-export const ThemeDecorator = (theme:Theme) => (Story:Story) => (
-    <ThemeProvider initialTheme={theme}>
-        <div id='root-app' className={classNames(`app ${theme}`)}>
+const ThemeUser = ({ children }: { children:ReturnType<Story>}) => {
+useTheme();
+    return  children ;
+}
+
+export const ThemeDecorator = (theme:Theme) =>
+    (Story:Story) => {
+    console.log('themeDecorator', theme)
+    return <ThemeProvider initialTheme={theme}>
+        <ThemeUser>
+            <div id='root-app' className={`app `}>
             <Story/>
-        </div>
+            </div>
+        </ThemeUser>
     </ThemeProvider>
-)
+}

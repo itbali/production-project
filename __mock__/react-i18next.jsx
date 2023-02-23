@@ -9,3 +9,7 @@ export const withTranslation = () => (Component) => (props) => (
     <Component t={useMock.t} i18n={useMock.i18n} {...props} />
 );
 export const useTranslation = () => useMock;
+export const initReactI18next = {
+    type: '3rdParty',
+    init: () => undefined,
+};

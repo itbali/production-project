@@ -1,13 +1,14 @@
 {
-  "test translation": "test translation",
+  "main-page": "MAIN PAGE",
+  "about-page": "ABOUT PAGE",
   "language": "english",
   "language-short": "en",
   "toggle-sidebar": "toggle",
   "logo": "LOGO",
-  "mainPage": "main page",
-  "aboutPage": "about page",
   "notFoundPage.title": "Page not found",
   "error": "Error has occurred",
+  "enter": "Login",
   "reload": "reload",
-  "enter": "Login"
+  "increment": "Increment",
+  "decrement": "Decrement"
 }

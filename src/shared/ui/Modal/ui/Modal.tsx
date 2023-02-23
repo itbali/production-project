@@ -17,7 +17,7 @@ export const Modal = (props: ModalProps) => {
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
     };
-    const element = document.getElementById('root-app') || document.body;
+    const element = document.body;
 
     const clickAwayListener = useCallback(() => {
         if (onClose) {
@@ -51,9 +51,7 @@ export const Modal = (props: ModalProps) => {
     return (
         <Portal element={element}>
             <div className={classNames(cls.Modal, mods, [className])}>
-                {/* eslint-disable-next-line */}
                 <div className={cls.overlay} onClick={clickAwayListener}>
-                    {/* eslint-disable-next-line */}
                     <div className={cls.content} onClick={onContentClick}>
                         {children}
                     </div>

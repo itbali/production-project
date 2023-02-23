@@ -50,14 +50,14 @@ export function SideBar({ className }: SideBarProps) {
                     className={cls.link}
                 >
                     <HomeSVG />
-                    {!collapsed && t('mainPage')}
+                    {!collapsed && t('main-page')}
                 </AppLink>
                 <AppLink
                     to={RoutePath.about}
                     className={cls.link}
                 >
                     <AboutSVG />
-                    {!collapsed && t('aboutPage')}
+                    {!collapsed && t('about-page')}
                 </AppLink>
             </div>
 

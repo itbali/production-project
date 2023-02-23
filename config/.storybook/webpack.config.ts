@@ -22,5 +22,8 @@ module.exports = async ({ config } : { config: webpack.Configuration }) => {
     config.resolve.extensions.push('.tsx', '.ts')
     config.module.rules.push(buildSvgLoader())
     config.module.rules.push(buildScssLoader(true))
+    config.plugins.push(new webpack.DefinePlugin({
+        __IS_DEV__: true,
+    }))
     return config
 }
