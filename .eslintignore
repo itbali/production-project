@@ -1,6 +1,7 @@
-node_modules
 build
+json-server
 config/jest
+node_modules
 storybook-static
 .eslintrc.js
 babel.config.json

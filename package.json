@@ -20,7 +20,8 @@
     "test:ui:static": "npx loki --requireReference --reactUri file:./storybook-static ",
     "test:ui:report": "npm run visual:report:json && npm run visual:report:html",
     "visual:report:json": "node scripts/generate-visual-json-report.js",
-    "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html"
+    "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html",
+    "server": "node json-server/index.js"
   },
   "keywords": [],
   "author": "",
@@ -71,6 +72,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "jsdom": "^21.1.0",
+    "json-server": "^0.17.2",
     "loki": "^0.31.0",
     "looks-same": "^8.1.0",
     "mini-css-extract-plugin": "^2.5.3",

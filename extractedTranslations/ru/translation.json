@@ -1,0 +1,19 @@
+{
+  "about-page": "about-page",
+  "aboutPage": "aboutPage",
+  "decrement": "decrement",
+  "enter": "enter",
+  "error": "error",
+  "increment": "increment",
+  "language": "language",
+  "language-short": "language-short",
+  "language_short": "language_short",
+  "logo": "logo",
+  "main-page": "main-page",
+  "mainPage": "mainPage",
+  "notFoundPage": {
+    "title": "title"
+  },
+  "reload": "reload",
+  "toggle-sidebar": "toggle-sidebar"
+}
