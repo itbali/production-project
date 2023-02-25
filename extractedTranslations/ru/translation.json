@@ -8,12 +8,15 @@
   "language": "language",
   "language-short": "language-short",
   "language_short": "language_short",
+  "login": "login",
   "logo": "logo",
   "main-page": "main-page",
   "mainPage": "mainPage",
   "notFoundPage": {
     "title": "title"
   },
+  "password": "password",
   "reload": "reload",
-  "toggle-sidebar": "toggle-sidebar"
+  "toggle-sidebar": "toggle-sidebar",
+  "username": "username"
 }

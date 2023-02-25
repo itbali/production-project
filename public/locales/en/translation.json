@@ -7,8 +7,10 @@
   "logo": "LOGO",
   "notFoundPage.title": "Page not found",
   "error": "Error has occurred",
-  "enter": "Login",
+  "login": "Login",
   "reload": "reload",
   "increment": "Increment",
-  "decrement": "Decrement"
+  "decrement": "Decrement",
+  "password": "Password",
+  "username": "Username"
 }

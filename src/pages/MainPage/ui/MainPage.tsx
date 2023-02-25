@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button/Button';
+import { Button } from 'shared/ui/Button';
 import { Counter } from 'entities/Counter';
 
 function MainPage() {

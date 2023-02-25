@@ -1,5 +1,5 @@
 import { classNames } from 'helpers/classNames/ui/classNames';
-import { Button, Variant } from 'shared/ui/Button/Button';
+import { Button, Variant } from 'shared/ui/Button';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import cls from './LangSwitcher.module.scss';

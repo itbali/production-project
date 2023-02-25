@@ -10,5 +10,7 @@
   "enter": "Войти",
   "reload": "Обновить",
   "increment": "Увеличить",
-  "decrement": "Уменьшить"
+  "decrement": "Уменьшить",
+  "password": "Пароль",
+  "username": "Имя пользователя"
 }

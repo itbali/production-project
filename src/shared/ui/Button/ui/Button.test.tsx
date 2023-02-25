@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Button, Variant } from 'shared/ui/Button/Button';
+import { Button, Variant } from './Button';
 
 describe('Button ', () => {
     it(' should be rendered', () => {

@@ -3,7 +3,7 @@
 
     padding: 6px 10px;
 
-    color: var(--primary-color);
+    color: var(--inverted-primary-color);
 
     box-shadow: 0 0 0 0;
 
@@ -12,6 +12,7 @@
 
 .clear,
 .clearInverted {
+    color: var(--primary-color);
     background: none;
     border: none;
     outline: none;
