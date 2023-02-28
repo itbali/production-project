@@ -4,46 +4,50 @@
     display: flex;
     align-items: center;
 
-    background: var(--inverted-bg-color);
-    border: 1px solid var(--inverted-primary-color);
+    background: var(--bg-color);
+    border: 1px solid var(--primary-color);
     border-radius: 5px;
+}
 
-    .label {
-        position: absolute;
-        left: 0;
+.label {
+    position: absolute;
+    left: 0;
 
-        color: var(--inverted-primary-color);
+    padding: 5px;
 
-        opacity: 0.3;
-        background: none;
+    color: var(--primary-color);
 
-        transition: var(--transition-time);
+    opacity: 0.3;
+    background: none;
 
-        &.isSelected {
-            transform-origin: top left;
-            transform: translateY(-50%) scale(0.8);
+    transition: var(--transition-time);
 
-            opacity: 1;
-            background: var(--inverted-bg-color);
-            border-radius: 5px;
-        }
+    &.isSelected {
+        transform-origin: top left;
+        transform: translateY(-60%) scale(0.8);
 
-        &.isInvisible {
-            visibility: hidden;
-            opacity: 0;
-        }
-    }
+        padding: 0 6px;
 
-    .input {
-        width: 100%;
-        padding: 5px;
-
-        font-weight: 500;
-        color: var(--inverted-primary-color);
-
-        background: none;
-        border: none;
+        opacity: 1;
+        background: var(--bg-color);
         border-radius: 5px;
-        outline: none;
     }
+
+    &.isInvisible {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.input {
+    width: 100%;
+    padding: 5px;
+
+    font-weight: 500;
+    color: var(--primary-color);
+
+    background: none;
+    border: none;
+    border-radius: 5px;
+    outline: none;
 }

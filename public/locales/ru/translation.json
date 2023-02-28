@@ -12,5 +12,7 @@
   "increment": "Увеличить",
   "decrement": "Уменьшить",
   "password": "Пароль",
-  "username": "Имя пользователя"
+  "username": "Имя пользователя",
+  "loginForm": "Авторизация",
+  "logout": "Выйти"
 }

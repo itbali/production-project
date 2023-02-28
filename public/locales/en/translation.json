@@ -12,5 +12,7 @@
   "increment": "Increment",
   "decrement": "Decrement",
   "password": "Password",
-  "username": "Username"
+  "username": "Username",
+  "loginForm": "Login form",
+  "logout": "Logout"
 }

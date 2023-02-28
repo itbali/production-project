@@ -14,7 +14,7 @@ export const parameters = {
     },
   },
 }
-addDecorator(StoreDecorator)
+addDecorator(StoreDecorator({}))
 addDecorator(StylingDecorator)
 addDecorator(ThemeDecorator(Theme.LIGHT))
 addDecorator(RoutesDecorator)

@@ -9,7 +9,6 @@ useTheme();
 
 export const ThemeDecorator = (theme:Theme) =>
     (Story:Story) => {
-    console.log('themeDecorator', theme)
     return <ThemeProvider initialTheme={theme}>
         <ThemeUser>
             <div id='root-app' className={`app `}>
