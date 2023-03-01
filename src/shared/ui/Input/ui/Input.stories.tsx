@@ -36,3 +36,16 @@ InputWithLabelAndValue.args = {
 };
 export const InputDark = Template.bind({});
 InputDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const InputWithLabelDark = Template.bind({});
+InputWithLabelDark.args = {
+    placeholder: 'Label',
+};
+InputWithLabelDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const InputWithLabelAndValueDark = Template.bind({});
+InputWithLabelAndValueDark.args = {
+    placeholder: 'Label',
+    value: 'Value',
+};
+InputWithLabelAndValueDark.decorators = [ThemeDecorator(Theme.DARK)];

@@ -8,7 +8,11 @@ interface authData {
     password: string,
 }
 
-export const loginByUsername = createAsyncThunk<User, authData, { rejectValue: string }>(
+export const loginByUsername = createAsyncThunk<
+    User,
+    authData,
+    { rejectValue: string }
+>(
     'login/loginByUsername',
     async (authData, thunkAPI) => {
         try {
@@ -21,6 +25,9 @@ export const loginByUsername = createAsyncThunk<User, authData, { rejectValue: s
             return response.data;
         } catch (error) {
             console.log(error);
+            if (axios.isAxiosError(error)) {
+                return thunkAPI.rejectWithValue(error?.message || error?.code);
+            }
             return thunkAPI.rejectWithValue(error);
         }
     },

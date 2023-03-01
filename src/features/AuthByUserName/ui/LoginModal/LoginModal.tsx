@@ -1,35 +1,25 @@
 import { Modal } from 'shared/ui/Modal';
-import { useEffect, useState } from 'react';
-import { LoginForm } from '../LoginForm/LoginForm';
+import { Suspense } from 'react';
+import { Spinner } from 'shared/ui/Spinner';
+import { LoginFormAsync } from '../LoginForm/LoginFormAsync';
 
 interface LoginModalProps {
     className?: string,
     isOpened: boolean,
     onClose: () => void,
-    lazy?: boolean,
 }
 
 export const LoginModal = ({
-    className, isOpened, onClose, lazy,
-}: LoginModalProps) => {
-    const [isMounted, setIsMounted] = useState(false);
-
-    useEffect(() => {
-        if (isOpened) {
-            setIsMounted(true);
-        }
-    }, [isOpened]);
-
-    if (!isMounted && lazy) {
-        return null;
-    }
-    return (
-        <Modal
-            isOpen={isOpened}
-            onClose={onClose}
-            className={className}
-        >
-            <LoginForm />
-        </Modal>
-    );
-};
+    className, isOpened, onClose,
+}: LoginModalProps) => (
+    <Modal
+        isOpen={isOpened}
+        onClose={onClose}
+        className={className}
+        lazy
+    >
+        <Suspense fallback={<Spinner />}>
+            <LoginFormAsync />
+        </Suspense>
+    </Modal>
+);

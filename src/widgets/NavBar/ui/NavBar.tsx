@@ -52,7 +52,7 @@ export const NavBar = ({ className }: NavBarProps) => {
             <Button onClick={openModal} className={cls.links} variant={Variant.CLEAR_INVERTED}>
                 {t('login')}
             </Button>
-            <LoginModal isOpened={isAuthModalOpened} onClose={closeModal} />
+            {isAuthModalOpened && <LoginModal isOpened={isAuthModalOpened} onClose={closeModal} />}
 
         </div>
     );

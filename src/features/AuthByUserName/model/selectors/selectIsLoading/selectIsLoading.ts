@@ -3,5 +3,5 @@ import { createSelector } from '@reduxjs/toolkit';
 
 export const selectIsLoading = createSelector(
     [getLoginState],
-    (loginState) => loginState.isLoading,
+    (loginState) => loginState?.isLoading || false,
 );
