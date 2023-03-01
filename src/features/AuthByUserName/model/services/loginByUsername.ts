@@ -20,7 +20,7 @@ export const loginByUsername = createAsyncThunk<
             if (!response.data) {
                 throw new Error('No data');
             }
-            localStorage.setItem(LOCAL_STORAGE.user, response.data);
+            localStorage.setItem(LOCAL_STORAGE.user, JSON.stringify(response.data));
             thunkAPI.dispatch(userActions.setUser(response.data));
             return response.data;
         } catch (error) {
