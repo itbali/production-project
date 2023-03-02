@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { rendererWithMocks } from 'shared/config/tests/renderWithMocks';
+import { rendererWithMocks } from 'helpers/tests/renderWithMocks';
 import React from 'react';
 import { Input } from './Input';
 
