@@ -1,6 +1,7 @@
 {
   "main-page": "ГЛАВНАЯ",
   "about-page": "О НАС ",
+  "profile-page": "ПРОФИЛЬ",
   "language": "русский",
   "language-short": "ру",
   "toggle-sidebar": "сайдбар",
@@ -14,5 +15,6 @@
   "password": "Пароль",
   "username": "Имя пользователя",
   "loginForm": "Авторизация",
-  "logout": "Выйти"
+  "logout": "Выйти",
+  "profilePage": "Профиль"
 }

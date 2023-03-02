@@ -6,8 +6,8 @@ import { SideBar } from 'widgets/SideBar';
 import 'shared/config/i18n/i18n';
 import { Suspense, useEffect } from 'react';
 import { Spinner } from 'shared/ui/Spinner';
-import { useAppDispatch } from 'app/providers/storeProvider/config/store';
 import { userActions } from 'entities/User';
+import { useAppDispatch } from 'helpers/hooks';
 
 function App() {
     const dispatch = useAppDispatch();

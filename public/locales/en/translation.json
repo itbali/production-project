@@ -1,6 +1,7 @@
 {
   "main-page": "MAIN PAGE",
   "about-page": "ABOUT PAGE",
+  "profile-page": "PROFILE PAGE",
   "language": "english",
   "language-short": "en",
   "toggle-sidebar": "toggle",
@@ -14,5 +15,6 @@
   "password": "Password",
   "username": "Username",
   "loginForm": "Login form",
-  "logout": "Logout"
+  "logout": "Logout",
+  "profilePage": "Profile page"
 }

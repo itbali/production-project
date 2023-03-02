@@ -1,6 +1,6 @@
 import { classNames } from 'helpers/classNames/ui/classNames';
 import { Button, Variant } from 'shared/ui/Button';
-import { useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import cls from './LangSwitcher.module.scss';
 
@@ -9,10 +9,16 @@ interface LangSwitcherProps {
     collapsed: boolean,
 }
 
-export function LangSwitcher(props: LangSwitcherProps) {
-    const { className, collapsed } = props;
+export const LangSwitcher = memo((props: LangSwitcherProps) => {
+    const {
+        className,
+        collapsed,
+    } = props;
 
-    const { t, i18n } = useTranslation();
+    const {
+        t,
+        i18n,
+    } = useTranslation();
     const handleTranslation = useCallback(() => {
         i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
     }, [i18n]);
@@ -28,4 +34,4 @@ export function LangSwitcher(props: LangSwitcherProps) {
                 : t('language')}
         </Button>
     );
-}
+});

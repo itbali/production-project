@@ -19,6 +19,7 @@
     "title": "title"
   },
   "password": "password",
+  "profilePage": "profilePage",
   "reload": "reload",
   "toggle-sidebar": "toggle-sidebar",
   "username": "username"

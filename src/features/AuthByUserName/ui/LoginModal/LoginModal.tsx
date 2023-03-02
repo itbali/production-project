@@ -19,7 +19,7 @@ export const LoginModal = ({
         lazy
     >
         <Suspense fallback={<Spinner />}>
-            <LoginFormAsync />
+            <LoginFormAsync onSuccessfulLogin={onClose} />
         </Suspense>
     </Modal>
 );

@@ -1,12 +1,12 @@
 import { classNames } from 'helpers/classNames';
 import {
-    MouseEvent, useCallback, useEffect, useState,
+    MouseEvent, ReactNode, useCallback, useEffect, useState,
 } from 'react';
 import { Portal } from 'shared/ui/Portal/ui/Portal';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
-    children?: React.ReactNode,
+    children?: ReactNode,
     className?: string,
     isOpen?: boolean,
     onClose?: () => void,
@@ -15,7 +15,11 @@ interface ModalProps {
 
 export const Modal = (props: ModalProps) => {
     const {
-        children, className, isOpen, onClose, lazy,
+        children,
+        className,
+        isOpen,
+        onClose,
+        lazy,
     } = props;
 
     const [isMounted, setIsMounted] = useState(false);

@@ -1,25 +1,32 @@
 import { classNames } from 'helpers/classNames/ui/classNames';
-import React, { useState } from 'react';
+import React, { memo, useMemo, useState } from 'react';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonSize, Variant } from 'shared/ui/Button';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import HomeSVG from 'shared/assets/icons/home.svg';
-import AboutSVG from 'shared/assets/icons/about.svg';
 import cls from './SideBar.module.scss';
+import { SideBarItems } from '../../model/item';
+import { SideBarItem } from '../SideBarItem/SideBarItem';
 
 interface SideBarProps {
     className?: string,
 }
 
-export function SideBar({ className }: SideBarProps) {
+export const SideBar = memo(({ className }: SideBarProps) => {
     const { t } = useTranslation();
     const [collapsed, setCollapsed] = useState(false);
     const onToggle = () => {
         setCollapsed((prevState) => !prevState);
     };
+
+    const itemsList = useMemo(() => SideBarItems.map((item) => (
+        <SideBarItem
+            key={item.path}
+            item={item}
+            collapsed={collapsed}
+        />
+    )), [collapsed]);
+
     return (
         <div
             data-testid="sidebar"
@@ -44,21 +51,7 @@ export function SideBar({ className }: SideBarProps) {
             </Button>
 
             <div className={cls.links}>
-                <AppLink
-                    to={RoutePath.main}
-                    theme={AppLinkTheme.SECONDARY}
-                    className={cls.link}
-                >
-                    <HomeSVG />
-                    {!collapsed && t('main-page')}
-                </AppLink>
-                <AppLink
-                    to={RoutePath.about}
-                    className={cls.link}
-                >
-                    <AboutSVG />
-                    {!collapsed && t('about-page')}
-                </AppLink>
+                {itemsList}
             </div>
 
             <div className={cls.switchers}>
@@ -67,4 +60,4 @@ export function SideBar({ className }: SideBarProps) {
             </div>
         </div>
     );
-}
+});
