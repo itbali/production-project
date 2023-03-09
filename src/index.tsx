@@ -7,14 +7,14 @@ import ThemeProvider from './app/providers/themeProvider/ui/ThemeProvider';
 import './app/styles/index.scss';
 
 render(
-    <StoreProvider>
-        <ErrorBoundary>
-            <BrowserRouter>
+    <BrowserRouter>
+        <StoreProvider>
+            <ErrorBoundary>
                 <ThemeProvider>
                     <App />
                 </ThemeProvider>
-            </BrowserRouter>
-        </ErrorBoundary>
-    </StoreProvider>,
+            </ErrorBoundary>
+        </StoreProvider>
+    </BrowserRouter>,
     document.getElementById('root'),
 );

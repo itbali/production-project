@@ -1,7 +1,6 @@
 import {
     selectPassword,
 } from 'features/AuthByUserName/model/selectors/selectPassword/selectPassword';
-import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/storeProvider';
 
 describe('selectPassword should', () => {

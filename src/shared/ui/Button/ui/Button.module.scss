@@ -39,6 +39,12 @@
     border: none;
 }
 
+.error {
+    color: var(--primary-error-color);
+    background: none;
+    border: 1px solid var(--secondary-error-color);
+}
+
 .size_s {
     font: var(--font-s);
 }

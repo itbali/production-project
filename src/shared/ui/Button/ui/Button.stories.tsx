@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Theme } from 'app/providers/themeProvider';
-import { Button, Variant } from './Button';
+import { Button, ButtonSize, Variant } from './Button';
 import { ThemeDecorator } from '../../../../../config/.storybook/decorators/themeDecorator';
 
 export default {
@@ -47,17 +47,17 @@ PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const PrimarySmall = Template.bind({});
 PrimarySmall.args = {
-    size: 'size_s',
+    size: ButtonSize.S,
 };
 
 export const PrimaryLarge = Template.bind({});
 PrimaryLarge.args = {
-    size: 'size_l',
+    size: ButtonSize.L,
 };
 
 export const PrimaryExtraLarge = Template.bind({});
 PrimaryExtraLarge.args = {
-    size: 'size_xl',
+    size: ButtonSize.XL,
 };
 
 export const Clear = Template.bind({});

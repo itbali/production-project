@@ -14,7 +14,7 @@ import { BuildOptions } from './types/config';
 // };
 
 export function buildPlugins(
-    { paths, isDev }: BuildOptions,
+    { paths, isDev, api }: BuildOptions,
 ): webpack.WebpackPluginInstance[] {
     const plugins: webpack.WebpackPluginInstance[] = [
         new HtmlWebpackPlugin({
@@ -27,6 +27,7 @@ export function buildPlugins(
             }),
             new webpack.DefinePlugin({
                 __IS_DEV__: isDev,
+                __API__: JSON.stringify(api),
             }),
             new ReactRefreshWebpackPlugin({ overlay: false }),
     ]

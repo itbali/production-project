@@ -13,17 +13,19 @@ module.exports = async ({ config } : { config: webpack.Configuration }) => {
         build:'',
     }
 
-    const fileLoaderRule = config.module.rules.find(
+    const fileLoaderRule = config.module!.rules!.find(
+        // @ts-ignore
         ({ test }: { test:RegExp }) => test && test.test(".svg")
     ) as  webpack.RuleSetRule;
     fileLoaderRule.exclude = /\.svg$/;
 
-    config.resolve.modules.push(paths.src)
-    config.resolve.extensions.push('.tsx', '.ts')
-    config.module.rules.push(buildSvgLoader())
-    config.module.rules.push(buildScssLoader(true))
-    config.plugins.push(new webpack.DefinePlugin({
-        __IS_DEV__: true,
+    config.resolve!.modules!.push(paths.src)
+    config.resolve!.extensions!.push('.tsx', '.ts')
+    config.module!.rules!.push(buildSvgLoader())
+    config.module!.rules!.push(buildScssLoader(true))
+    config.plugins!.push(new webpack.DefinePlugin({
+        __IS_DEV__: JSON.stringify(true),
+        __API__: JSON.stringify(''),
     }))
     return config
 }

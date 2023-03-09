@@ -1,13 +1,22 @@
 {
   "about-page": "about-page",
   "aboutPage": "aboutPage",
+  "age": "",
+  "avatar": "",
+  "city": "",
+  "country": "",
+  "coutry": "",
+  "currency": "currency",
   "decrement": "",
+  "edit": "",
   "enter": "enter",
   "error": "error",
+  "firstName": "",
   "increment": "",
   "language": "language",
   "language-short": "language-short",
   "language_short": "",
+  "lastName": "",
   "login": "",
   "loginForm": "",
   "loginFrom": "",
@@ -19,8 +28,10 @@
     "title": "title"
   },
   "password": "",
+  "profile": "",
   "profilePage": "",
   "reload": "reload",
+  "reset": "reset",
   "toggle-sidebar": "toggle-sidebar",
   "username": ""
 }

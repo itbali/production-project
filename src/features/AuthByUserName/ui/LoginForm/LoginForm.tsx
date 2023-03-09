@@ -72,7 +72,7 @@ const LoginForm = memo(({ className, onSuccessfulLogin }: LoginFormProps) => {
 
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t('loginForm')} className={cls.title} />
-                {error && <Text text={error} theme="error" className={cls.error} />}
+                {error && <Text text={error} variant="error" className={cls.error} />}
                 <Input
                     placeholder={t('username')}
                     className={cls.input}

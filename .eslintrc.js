@@ -16,6 +16,10 @@ module.exports = {
   }],
   parser: '@typescript-eslint/parser',
   plugins: ['react', '@typescript-eslint'],
+  globals: {
+    __IS_DEV__: true,
+    __API__: true,
+  },
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-unused-vars': 'off',

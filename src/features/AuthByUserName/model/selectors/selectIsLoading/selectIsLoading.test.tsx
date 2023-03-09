@@ -1,7 +1,6 @@
 import {
     selectIsLoading,
 } from 'features/AuthByUserName/model/selectors/selectIsLoading/selectIsLoading';
-import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/storeProvider';
 
 describe('selectIsLoading should', () => {

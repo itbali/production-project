@@ -1,6 +1,5 @@
 import { selectError } from 'features/AuthByUserName/model/selectors/selectError/selectError';
 import { StateSchema } from 'app/providers/storeProvider';
-import { DeepPartial } from '@reduxjs/toolkit';
 
 describe('selectError should', () => {
     it('return error', () => {

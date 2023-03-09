@@ -1,2 +1,10 @@
 export { Profile, ProfileSchema } from './model/types/profile';
 export { profileActions, profileReducer } from './model/slice/profileSlice';
+export { fetchProfileData } from './model/service/fetchProfileData/fetchProfileData';
+export { updateProfileData } from './model/service/updateProfileData/updateProfileData';
+export { ProfileCard } from './ui/ProfileCard/ProfileCard';
+export { selectProfileData } from './model/selectors/selectProfileData/selectProfileData';
+export { selectProfileFormData } from './model/selectors/selectProfileFormData/selectProfileFormData';
+export { selectProfileError } from './model/selectors/selectProfileError/selectProfileError';
+export { selectProfileIsLoading } from './model/selectors/selectProfileIsLoading/SelectProfileIsLoading';
+export { selectProfileReadOnly } from './model/selectors/selectProfileReadOnly/selectProfileReadOnly';

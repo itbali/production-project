@@ -1,4 +1,4 @@
-import { classNames } from 'helpers/classNames/ui/classNames';
+import { classNames, Mods } from 'helpers/classNames/ui/classNames';
 import { ButtonHTMLAttributes, memo } from 'react';
 import cls from './Button.module.scss';
 
@@ -8,6 +8,7 @@ export enum Variant {
     OUTLINE= 'outline',
     BACKGROUND= 'background',
     BACKGROUND_INVERTED= 'backgroundInverted',
+    ERROR= 'error',
 }
 
 export enum ButtonSize {
@@ -28,14 +29,14 @@ export const Button = memo((props:ButtonProps) => {
     const {
         className,
         children,
-        variant,
+        variant = Variant.CLEAR,
         isSquare,
         size = ButtonSize.M,
         disabled,
         ...rest
     } = props;
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.square]: isSquare,
         [cls.disabled]: disabled,
     };

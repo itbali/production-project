@@ -1,14 +1,17 @@
 import { classNames } from 'helpers/classNames';
-import { memo } from 'react';
+import { memo, ReactNode } from 'react';
 import cls from './Text.module.scss';
 
-export type TextTheme = 'primary' | 'error';
+type TextVariant = 'primary' | 'error';
+type TextAlign = 'left' | 'center' | 'right';
 
 interface TextProps {
     className?: string,
     title?: string,
     text?: string,
-    theme?: TextTheme,
+    variant?: TextVariant,
+    children?: ReactNode,
+    align?: TextAlign,
 }
 
 export const Text = memo((props: TextProps) => {
@@ -16,10 +19,12 @@ export const Text = memo((props: TextProps) => {
         className,
         title,
         text,
-        theme = 'primary',
+        children,
+        variant = 'primary',
+        align = 'left',
     } = props;
     return (
-        <div className={classNames(cls.Text, {}, [className, cls[theme]])}>
+        <div className={classNames(cls.Text, {}, [className, cls[variant], cls[align]])}>
             {title && <p className={cls.title}>{title}</p>}
             {text && <p className={cls.text}>{text}</p>}
         </div>

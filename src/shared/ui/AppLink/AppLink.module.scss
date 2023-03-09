@@ -1,14 +1,19 @@
 .AppLink {
-    color: var(--inverted-primary-color);
-    fill: var(--inverted-primary-color);
+    color: var(--primary-color-soft);
+    fill: var(--primary-color-soft);
 }
 
 .primary {
-    color: var(--inverted-primary-color);
-    fill: var(--inverted-primary-color);
+    color: var(--primary-color-soft);
+    fill: var(--primary-color-soft);
 }
 
 .secondary {
     color: var(--inverted-secondary-color);
     fill: var(--inverted-secondary-color);
+}
+
+.inverted {
+    color: var(--inverted-primary-color);
+    fill: var(--inverted-primary-color);
 }

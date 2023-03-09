@@ -5,7 +5,6 @@ import { Reducer } from '@reduxjs/toolkit';
 import { useAppDispatch } from 'helpers/hooks';
 
 export type ReducersList = Partial<Record<StateSchemaKey, Reducer>>;
-type ReducersListEntry = [StateSchemaKey, Reducer];
 
 interface DynamicModuleLoaderProps {
     children: ReactNode;
@@ -21,15 +20,15 @@ export const DynamicModuleLoader:FC<DynamicModuleLoaderProps> = (props) => {
     const dispatch = useAppDispatch();
     const store = useStore() as reduxStoreWithReducerManager;
     useEffect(() => {
-        Object.entries(reducers).forEach(([reducerName, reducer]:ReducersListEntry) => {
-            store.reducerManager.add(reducerName, reducer);
+        Object.entries(reducers).forEach(([reducerName, reducer]) => {
+            store.reducerManager.add(reducerName as StateSchemaKey, reducer);
             dispatch({ type: `@INIT reducer ${reducerName}` });
         });
 
         return () => {
             if (shouldBeRemoved) {
-                Object.keys(reducers).forEach((reducerName:StateSchemaKey) => {
-                    store.reducerManager.remove(reducerName);
+                Object.keys(reducers).forEach((reducerName) => {
+                    store.reducerManager.remove(reducerName as StateSchemaKey);
                 });
             }
         };

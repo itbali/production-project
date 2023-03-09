@@ -4,12 +4,13 @@ import React, {
 } from 'react';
 import cls from './Input.module.scss';
 
-interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
+interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'| 'readOnly'> {
     className?: string,
     placeholder?:string,
-    value?: string,
+    value?: string | number,
     onChange?: (value: string) => void,
     dataTestId?: string,
+    readonly?: boolean,
 }
 
 export const Input = memo((props: InputProps) => {
@@ -19,6 +20,7 @@ export const Input = memo((props: InputProps) => {
         value,
         onChange,
         dataTestId,
+        readonly = false,
     } = props;
 
     const [isSelected, setIsSelected] = useState(false);
@@ -36,20 +38,20 @@ export const Input = memo((props: InputProps) => {
                 <span
                     role="tooltip"
                     className={classNames(cls.label, {
-                        [cls.isSelected]: isSelected,
-                        [cls.isInvisible]: !isSelected && value,
+                        [cls.isSelected]: isSelected || Boolean(value),
                     })}
                 >
                     {placeholder}
                 </span>
             )}
             <input
+                disabled={readonly}
                 type={props.type || 'text'}
                 value={value}
                 onChange={onInputChange}
                 onBlur={() => setIsSelected(false)}
                 onFocus={() => setIsSelected(true)}
-                className={classNames(cls.input)}
+                className={classNames(cls.input, { [cls.disabled]: readonly })}
             />
         </div>
     );

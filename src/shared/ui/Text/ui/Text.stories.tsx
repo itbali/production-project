@@ -15,7 +15,7 @@ export default {
         text: {
             control: 'text',
         },
-        theme: {
+        variant: {
             control: 'select',
             options: [undefined, 'primary', 'error'],
         },
@@ -63,13 +63,13 @@ export const Error = Template.bind({});
 Error.args = {
     title: 'Title',
     text: 'Text',
-    theme: 'error',
+    variant: 'error',
 };
 
 export const ErrorDark = Template.bind({});
 ErrorDark.args = {
     title: 'Title',
     text: 'Text',
-    theme: 'error',
+    variant: 'error',
 };
 ErrorDark.decorators = [ThemeDecorator(Theme.DARK)];

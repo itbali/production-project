@@ -3,6 +3,7 @@ import {
     MouseEvent, ReactNode, useCallback, useEffect, useState,
 } from 'react';
 import { Portal } from 'shared/ui/Portal/ui/Portal';
+import { Mods } from 'helpers/classNames/ui/classNames';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
@@ -24,7 +25,7 @@ export const Modal = (props: ModalProps) => {
 
     const [isMounted, setIsMounted] = useState(false);
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.opened]: isOpen,
     };
     const element = document.body;

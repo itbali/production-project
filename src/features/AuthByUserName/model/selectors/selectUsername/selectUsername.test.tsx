@@ -1,7 +1,6 @@
 import {
     selectUsername,
 } from 'features/AuthByUserName/model/selectors/selectUsername/selectUsername';
-import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/storeProvider';
 
 describe('selectUsername should', () => {
