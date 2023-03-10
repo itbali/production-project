@@ -19,14 +19,18 @@
   "toggle-sidebar": "toggle",
   "logo": "LOGO",
   "notFoundPage.title": "Page not found",
-  "error": "Error has occurred",
   "login": "Login",
   "reload": "reload",
   "increment": "Increment",
   "decrement": "Decrement",
   "password": "Password",
-  "username": "Username",
   "loginForm": "Login form",
   "logout": "Logout",
-  "profilePage": "Profile page"
+  "profilePage": "Profile page",
+  "error": "Error has occurred",
+  "ageError": "Age must be a number between 1 and 120",
+  "firstNameError": "First name must be between 1 and 50 characters",
+  "lastNameError": "Last name must be between 1 and 50 characters",
+  "noDataError": "No data",
+  "serverError": "Server error"
 }

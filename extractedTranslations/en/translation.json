@@ -2,6 +2,7 @@
   "about-page": "about-page",
   "aboutPage": "aboutPage",
   "age": "",
+  "ageError": "ageError",
   "avatar": "",
   "city": "",
   "country": "",
@@ -12,11 +13,13 @@
   "enter": "enter",
   "error": "error",
   "firstName": "",
+  "firstNameError": "firstNameError",
   "increment": "",
   "language": "language",
   "language-short": "language-short",
   "language_short": "",
   "lastName": "",
+  "lastNameError": "lastNameError",
   "login": "",
   "loginForm": "",
   "loginFrom": "",
@@ -24,6 +27,7 @@
   "logout": "",
   "main-page": "main-page",
   "mainPage": "mainPage",
+  "noDataError": "noDataError",
   "notFoundPage": {
     "title": "title"
   },
@@ -32,6 +36,7 @@
   "profilePage": "",
   "reload": "reload",
   "reset": "reset",
+  "serverError": "serverError",
   "toggle-sidebar": "toggle-sidebar",
   "username": ""
 }

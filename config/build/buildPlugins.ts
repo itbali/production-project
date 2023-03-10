@@ -5,16 +5,8 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 
-/**
- handler for detailed information about each step of build
- */
-// const handler = (percentage: number, message: string, ...args: any[]) => {
-//     // e.g. Output each progress message directly to the console:
-//     console.info(percentage, message, ...args);
-// };
-
 export function buildPlugins(
-    { paths, isDev, api }: BuildOptions,
+    { paths, isDev, api, project }: BuildOptions,
 ): webpack.WebpackPluginInstance[] {
     const plugins: webpack.WebpackPluginInstance[] = [
         new HtmlWebpackPlugin({
@@ -28,6 +20,7 @@ export function buildPlugins(
             new webpack.DefinePlugin({
                 __IS_DEV__: isDev,
                 __API__: JSON.stringify(api),
+                __PROJECT__: JSON.stringify(project),
             }),
             new ReactRefreshWebpackPlugin({ overlay: false }),
     ]

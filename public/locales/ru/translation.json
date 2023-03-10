@@ -19,14 +19,18 @@
   "toggle-sidebar": "сайдбар",
   "logo": "ЛОГО",
   "notFoundPage.title": "Страница не найдена",
-  "error": "Произошла ошибка",
   "login": "Войти",
   "reload": "Обновить",
   "increment": "Увеличить",
   "decrement": "Уменьшить",
   "password": "Пароль",
-  "username": "Имя пользователя",
   "loginForm": "Авторизация",
   "logout": "Выйти",
-  "profilePage": "Профиль"
+  "profilePage": "Профиль",
+  "error": "Произошла ошибка",
+  "ageError": "Возраст должен быть между 1 и 120",
+  "firstNameError": "Имя должно быть длинной между 1 и 50 символами",
+  "lastNameError": "Фамилия должна быть длинной между 1 и 50 символами",
+  "noDataError": "Нет данных",
+  "serverError": "Ошибка сервера"
 }

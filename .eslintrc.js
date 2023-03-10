@@ -19,6 +19,7 @@ module.exports = {
   globals: {
     __IS_DEV__: true,
     __API__: true,
+    __PROJECT__: true,
   },
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',

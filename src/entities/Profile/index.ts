@@ -6,5 +6,6 @@ export { ProfileCard } from './ui/ProfileCard/ProfileCard';
 export { selectProfileData } from './model/selectors/selectProfileData/selectProfileData';
 export { selectProfileFormData } from './model/selectors/selectProfileFormData/selectProfileFormData';
 export { selectProfileError } from './model/selectors/selectProfileError/selectProfileError';
+export { selectProfileValidateErrors } from './model/selectors/selectProfileValidateErrors/selectValidateProfileErrors';
 export { selectProfileIsLoading } from './model/selectors/selectProfileIsLoading/SelectProfileIsLoading';
 export { selectProfileReadOnly } from './model/selectors/selectProfileReadOnly/selectProfileReadOnly';
