@@ -3,6 +3,7 @@
 @import "./variables/global";
 @import "./theme/dark";
 @import "./theme/light";
+@import "./theme/green";
 
 body {
     font: var(--font-m);
@@ -13,17 +14,6 @@ body {
     min-height: 100vh;
     background: var(--bg-color);
     transition: 0.3s;
-}
-
-$btn-width: 40px;
-$btn-margin: 8px;
-$btn-background: #d95b5b;
-
-.btn {
-    width: calc($btn-width * 3);
-    margin: $btn-margin;
-    color: color.adjust($btn-background, $lightness:30%);
-    background-color: $btn-background;
 }
 
 .content-page {

@@ -3,6 +3,7 @@ import React from 'react';
 export enum Theme {
     LIGHT = 'light',
     DARK = 'dark',
+    GREEN = 'green',
 }
 
 export interface ThemeContextProps {

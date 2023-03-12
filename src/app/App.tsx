@@ -6,11 +6,13 @@ import { SideBar } from 'widgets/SideBar';
 import 'shared/config/i18n/i18n';
 import { Suspense, useEffect } from 'react';
 import { Spinner } from 'shared/ui/Spinner';
-import { userActions } from 'entities/User';
+import { selectIsInitialized, userActions } from 'entities/User';
 import { useAppDispatch } from 'helpers/hooks';
+import { useSelector } from 'react-redux';
 
 function App() {
     const dispatch = useAppDispatch();
+    const isInitialized = useSelector(selectIsInitialized);
     useEffect(() => {
         dispatch(userActions.initUser());
     }, [dispatch]);
@@ -20,7 +22,7 @@ function App() {
                 <NavBar />
                 <div className="content-page">
                     <SideBar />
-                    <AppRouter />
+                    {isInitialized && <AppRouter />}
                 </div>
             </Suspense>
         </div>
