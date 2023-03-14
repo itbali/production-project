@@ -5,6 +5,7 @@ import {
     profileActions,
     ProfileCard,
     profileReducer,
+    selectProfileData,
     selectProfileError,
     selectProfileFormData,
     selectProfileIsLoading,
@@ -37,6 +38,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const dispatch = useAppDispatch();
     const { t } = useTranslation();
     const formData = useSelector(selectProfileFormData);
+    const data = useSelector(selectProfileData);
     const error = useSelector(selectProfileError);
     const errors = useSelector(selectProfileValidateErrors);
     const isLoading = useSelector(selectProfileIsLoading);
@@ -89,7 +91,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                     <Text key={error} align="center" variant="error" text={validateErrorsMap[error]} />
                 ))}
                 <ProfileCard
-                    data={formData}
+                    data={data}
                     isLoading={isLoading}
                     error={error}
                     onChangeFirstName={onChangeProfileFirstName}

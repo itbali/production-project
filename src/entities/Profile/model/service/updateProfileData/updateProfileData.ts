@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/storeProvider';
 import { Profile, ValidateProfileErrors } from '../../types/profile';
-import { selectProfileFormData } from '../../selectors/selectProfileFormData/selectProfileFormData';
 import { validateProfileData } from '../validateProfileData/validateProfileData';
+import { selectProfileData } from '../../selectors/selectProfileData/selectProfileData';
 
 interface authData {
     username: string,
@@ -17,15 +17,15 @@ export const updateProfileData = createAsyncThunk<
     'profile/updateProfileData',
     async (_, thunkAPI) => {
         const { rejectWithValue, extra, getState } = thunkAPI;
-        const formData = selectProfileFormData(getState());
-        const errors = validateProfileData(formData);
+        const data = selectProfileData(getState());
+        const errors = validateProfileData(data);
 
         if (errors.length) {
             return rejectWithValue(errors);
         }
 
         try {
-            const response = await extra.api.put('/profile', formData);
+            const response = await extra.api.put('/profile', data);
 
             if (!response.data) {
                 throw new Error();

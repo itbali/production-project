@@ -4,24 +4,24 @@ import { ProfileSchema, updateProfileData } from 'entities/Profile';
 import { ValidateProfileErrors } from 'entities/Profile/model/types/profile';
 import { profileActions, profileReducer } from './profileSlice';
 
+const profile = {
+    first: 'John',
+    age: 25,
+    lastname: 'Doe',
+    country: Country.USA,
+    currency: Currency.EUR,
+    city: 'New York',
+    username: 'johndoe',
+};
+const slice: ProfileSchema = {
+    data: profile,
+    formData: profile,
+    validateErrors: undefined,
+    error: undefined,
+    isLoading: false,
+    readonly: true,
+};
 describe('profileSlice should', () => {
-    const profile = {
-        first: 'John',
-        age: 25,
-        lastname: 'Doe',
-        country: Country.USA,
-        currency: Currency.EUR,
-        city: 'New York',
-        username: 'johndoe',
-    };
-    const slice: ProfileSchema = {
-        data: profile,
-        formData: profile,
-        validateErrors: undefined,
-        error: undefined,
-        isLoading: false,
-        readonly: true,
-    };
     it(' set readonly to false', () => {
         const result = profileReducer(slice, profileActions.setReadOnly(false));
         expect(result.readonly).toBe(false);
@@ -40,7 +40,7 @@ describe('profileSlice should', () => {
     });
     it(' update formData first name', () => {
         const result = profileReducer(slice, profileActions.updateProfile({ first: 'Alex' }));
-        expect(result.formData?.first).toBe('Alex');
+        expect(result.data?.first).toBe('Alex');
     });
 
     it(' isLoading to be true and errors should be undefined', () => {
@@ -62,8 +62,8 @@ describe('profileSlice should', () => {
             readonly: false,
         }, updateProfileData.fulfilled(profile, ''));
         expect(result.data).toEqual(profile);
-        expect(result.isLoading).toBe(false);
         expect(result.formData).toEqual(profile);
+        expect(result.isLoading).toBe(false);
         expect(result.readonly).toBe(true);
     });
 });

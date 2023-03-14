@@ -16,7 +16,7 @@ describe('fetchProfileData should', () => {
         username: 'johndoe',
     };
     it(' success return data', async () => {
-        const thunk = new TestAsyncThunk(updateProfileData, { profile: { formData: data } });
+        const thunk = new TestAsyncThunk(updateProfileData, { profile: { data } });
         thunk.api.put.mockReturnValue(Promise.resolve({ data }));
 
         const result = await thunk.callThunk();
@@ -25,7 +25,7 @@ describe('fetchProfileData should', () => {
         expect(result.payload).toEqual(data);
     });
     it(' fail return server error', async () => {
-        const thunk = new TestAsyncThunk(updateProfileData, { profile: { formData: data } });
+        const thunk = new TestAsyncThunk(updateProfileData, { profile: { data } });
         thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
 
         const result = await thunk.callThunk();
@@ -33,7 +33,7 @@ describe('fetchProfileData should', () => {
         expect(result.payload).toEqual([ValidateProfileErrors.SERVER_ERROR]);
     });
     it(' fail return validation error', async () => {
-        const thunk = new TestAsyncThunk(updateProfileData, { profile: { formData: { ...data, first: '' } } });
+        const thunk = new TestAsyncThunk(updateProfileData, { profile: { data: { ...data, first: '' } } });
 
         const result = await thunk.callThunk();
         expect(result.meta.requestStatus).toBe('rejected');
