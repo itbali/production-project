@@ -26,7 +26,7 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.PROFILE]: '/profile',
     // last route
     [AppRoutes.NOT_FOUND]: '*',
-    [AppRoutes.ARTICLE_DETAIL]: '/article_detail', // + :id
+    [AppRoutes.ARTICLE_DETAIL]: '/articles', // + :id
     [AppRoutes.ARTICLES]: '/articles',
 };
 
