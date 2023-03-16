@@ -8,6 +8,10 @@
     box-shadow: 0 0 0 0;
 
     transition: 0.3s;
+
+    &:hover {
+        color: var(--primary-color-soft);
+    }
 }
 
 .clear,

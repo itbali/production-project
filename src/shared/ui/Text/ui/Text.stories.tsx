@@ -59,6 +59,25 @@ TitleAndTextDark.args = {
 };
 TitleAndTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
+export const TitleAndTextSizeSmall = Template.bind({});
+TitleAndTextSizeSmall.args = {
+    title: 'Title',
+    text: 'Text',
+    size: 'small',
+};
+export const TitleAndTextSizeMedium = Template.bind({});
+TitleAndTextSizeMedium.args = {
+    title: 'Title',
+    text: 'Text',
+    size: 'medium',
+};
+export const TitleAndTextSizeLarge = Template.bind({});
+TitleAndTextSizeLarge.args = {
+    title: 'Title',
+    text: 'Text',
+    size: 'large',
+};
+
 export const Error = Template.bind({});
 Error.args = {
     title: 'Title',

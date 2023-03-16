@@ -1,0 +1,37 @@
+.Code {
+    position: relative;
+
+    overflow: auto;
+
+    padding: 20px;
+
+    background: var(--code-bg-color);
+    border: 1px solid var(--primary-color);
+}
+
+.copyBtn {
+    cursor: pointer;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px;
+
+    color: var(--primary-color);
+
+    background: var(--bg-color);
+    border: 1px solid var(--primary-color);
+
+    svg {
+        fill: var(--bg-color);
+
+        path {
+            stroke: var(--primary-color-soft);
+        }
+    }
+}

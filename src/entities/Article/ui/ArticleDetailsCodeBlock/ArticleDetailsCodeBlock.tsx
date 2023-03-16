@@ -1,18 +1,19 @@
 import { classNames } from 'helpers/classNames';
-import React from 'react';
+import React, { memo } from 'react';
+import { Code } from 'shared/ui/Code';
 import cls from './ArticleDetailsCodeBlock.module.scss';
+import { ArticleCodeBlock } from '../../model/types/article';
 
 interface ArticleDetailsImageBlockProps {
-	classname?: string;
+    block: ArticleCodeBlock
+    classname?: string;
 }
 
-function ArticleDetailsCodeBlock(props: ArticleDetailsImageBlockProps) {
-    const { classname } = props;
+export const ArticleDetailsCodeBlock = memo((props: ArticleDetailsImageBlockProps) => {
+    const { classname, block } = props;
     return (
         <div className={classNames(cls.ArticleDetailsCodeBlock, {}, [classname])}>
-            ArticleDetailsCodeBlock
+            <Code text={block.code} />
         </div>
     );
-}
-
-export default ArticleDetailsCodeBlock;
+});

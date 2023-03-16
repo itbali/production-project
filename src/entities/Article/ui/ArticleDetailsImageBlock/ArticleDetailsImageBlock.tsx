@@ -1,18 +1,24 @@
 import { classNames } from 'helpers/classNames';
-import React from 'react';
+import React, { memo } from 'react';
+import { Text } from 'shared/ui/Text';
 import cls from './ArticleDetailsImageBlock.module.scss';
+import { ArticleImageBlock } from '../../model/types/article';
 
 interface ArticleDetailsImageBlockProps {
-	classname?: string;
+    block: ArticleImageBlock
+    classname?: string;
 }
 
-function ArticleDetailsImageBlock(props: ArticleDetailsImageBlockProps) {
-    const { classname } = props;
+export const ArticleDetailsImageBlock = memo((props: ArticleDetailsImageBlockProps) => {
+    const { classname, block } = props;
     return (
         <div className={classNames(cls.ArticleDetailsImageBlock, {}, [classname])}>
-            ArticleDetailsImageBlock
+            <img
+                className={cls.image}
+                src={block.src}
+                alt={block.title}
+            />
+            {block.title && <Text text={block.title} align="center" />}
         </div>
     );
-}
-
-export default ArticleDetailsImageBlock;
+});

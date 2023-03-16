@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { getArticleDetails } from '../../selectors/getArticleDetails';
+import { getArticleDetails } from '../getArticleDetailsData/getArticleDetails';
 
 export const selectData = createSelector(
     getArticleDetails,

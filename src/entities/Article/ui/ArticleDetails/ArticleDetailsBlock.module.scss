@@ -1,16 +1,35 @@
 .ArticleDetailsBlock {
-	display: flex;
-	height: 100%;
+    display: flex;
+    height: 100%;
 }
 
 .avatar {
-	margin: 0 auto;
+    margin: 0 auto;
 }
 
 .title {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 
 .skeleton {
-	margin-top: 15px;
+    margin-top: 15px;
+}
+
+.avatarWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.articleInfo {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+.block {
+    margin-bottom: 15px;
 }
