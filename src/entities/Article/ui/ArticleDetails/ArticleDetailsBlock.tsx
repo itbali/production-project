@@ -1,5 +1,5 @@
 import { classNames } from 'helpers/classNames';
-import React, { memo, useCallback, useEffect } from 'react';
+import React, { memo, useCallback } from 'react';
 import { DynamicModuleLoader, ReducersList } from 'helpers/components/DynamicModuleLoader';
 import { useAppDispatch } from 'helpers/hooks';
 import { Text } from 'shared/ui/Text';
@@ -19,6 +19,7 @@ import {
 import {
     ArticleDetailsTextBlock,
 } from 'entities/Article/ui/ArticleDetailsTextBlock/ArticleDetailsTextBlock';
+import { useInitialEffect } from 'helpers/hooks/ui/useInitialEffect';
 import { fetchArticleById } from '../../model/services/fetchArticleById';
 import cls from './ArticleDetailsBlock.module.scss';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
@@ -75,9 +76,9 @@ export const ArticleDetailsBlock = memo((props: ArticleDetailsBlockProps) => {
         }
     }, []);
 
-    useEffect(() => {
-        if (articleId && __PROJECT__ !== 'storybook') dispatch(fetchArticleById(articleId));
-    }, [articleId, dispatch]);
+    useInitialEffect(() => {
+        if (articleId) dispatch(fetchArticleById(articleId));
+    });
 
     let content;
     if (isLoading) {

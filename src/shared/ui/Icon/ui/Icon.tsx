@@ -3,7 +3,7 @@ import React from 'react';
 import cls from './Icon.module.scss';
 
 interface IconProps {
-    Svg: React.FC<React.SVGProps<SVGSVGElement>>;
+    Svg: React.VFC<React.SVGProps<SVGElement>>;
     className?: string
 }
 

@@ -7,6 +7,7 @@ import { AxiosInstance } from 'axios';
 import { NavigateOptions } from 'react-router';
 import { To } from 'react-router-dom';
 import { ArticleDetailsSchema } from 'entities/Article';
+import { ArticleDetailCommentsSchema } from 'pages/ArticleDetailPage';
 import { createReducerManager } from './reducerManager';
 
 export interface StateSchema {
@@ -17,6 +18,7 @@ export interface StateSchema {
     loginForm?: LoginSchema,
     profile?: ProfileSchema,
     articleDetails?: ArticleDetailsSchema,
+    articleDetailsComments?: ArticleDetailCommentsSchema,
 }
 
 export type StateSchemaKey = keyof StateSchema;

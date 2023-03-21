@@ -3,8 +3,8 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from 'app/providers/themeProvider';
 import { mockArticle } from 'shared/assets/test/mockedArticle';
 import ArticleDetailPage from './ArticleDetailPage';
-import { ThemeDecorator } from '../../../../config/.storybook/decorators/themeDecorator';
-import { StoreDecorator } from '../../../../config/.storybook/decorators/storeDecorator';
+import { ThemeDecorator } from '../../../../../config/.storybook/decorators/themeDecorator';
+import { StoreDecorator } from '../../../../../config/.storybook/decorators/storeDecorator';
 
 export default {
     title: 'pages/ArticleDetailPage',
