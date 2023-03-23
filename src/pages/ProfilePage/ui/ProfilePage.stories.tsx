@@ -22,6 +22,16 @@ const Template: ComponentStory<typeof ProfilePageComponent> = (
 export const ProfilePage = Template.bind({});
 ProfilePage.decorators = [StoreDecorator({
     profile: {
+        data: {
+            first: 'John',
+            age: 25,
+            lastname: 'Doe',
+            country: Country.USA,
+            currency: Currency.EUR,
+            city: 'New York',
+            username: 'johndoe',
+            avatar: Avatar,
+        },
         formData: {
             first: 'John',
             age: 25,
@@ -40,6 +50,16 @@ ProfilePageDark.decorators = [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
         profile: {
+            data: {
+                first: 'John',
+                age: 25,
+                lastname: 'Doe',
+                country: Country.USA,
+                currency: Currency.EUR,
+                city: 'New York',
+                username: 'johndoe',
+                avatar: Avatar,
+            },
             formData: {
                 first: 'John',
                 age: 25,

@@ -14,6 +14,7 @@
   "articles": [
     {
       "id": "1",
+      "userId": "1",
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
@@ -102,6 +103,36 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "",
+      "id": "2zMlUeI"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "",
+      "id": "Mw3r_nQ"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "1233",
+      "id": "EOxhE9q"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Важный комментарий",
+      "id": "EsqQxLr"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "new one",
+      "id": "M9kY0CT"
     }
   ],
   "users": [
@@ -120,14 +151,28 @@
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://store.playstation.com/store/api/chihiro/00_09_000/container/TR/tr/99/EP2402-CUSA05624_00-AV00000000000230/0/image?_version=00_09_000&platform=chihiro&bg_color=000000&opacity=100&w=720&h=720"
-  }
+  "profile": [
+    {
+      "id": 1,
+      "first": "jgh",
+      "lastname": "asf",
+      "age": 46,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://store.playstation.com/store/api/chihiro/00_09_000/container/TR/tr/99/EP2402-CUSA05624_00-AV00000000000230/0/image?_version=00_09_000&platform=chihiro&bg_color=000000&opacity=100&w=720&h=720"
+    },
+    {
+      "id": 2,
+      "first": "jgh",
+      "lastname": "asf",
+      "age": 65,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "user213",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 import { classNames } from 'helpers/classNames';
 import React, { memo, useCallback } from 'react';
 import { DynamicModuleLoader, ReducersList } from 'helpers/components/DynamicModuleLoader';
-import { useAppDispatch } from 'helpers/hooks';
+import { useAppDispatch, useInitialEffect } from 'helpers/hooks';
 import { Text } from 'shared/ui/Text';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -19,7 +19,6 @@ import {
 import {
     ArticleDetailsTextBlock,
 } from 'entities/Article/ui/ArticleDetailsTextBlock/ArticleDetailsTextBlock';
-import { useInitialEffect } from 'helpers/hooks/ui/useInitialEffect';
 import { fetchArticleById } from '../../model/services/fetchArticleById';
 import cls from './ArticleDetailsBlock.module.scss';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
@@ -51,7 +50,7 @@ export const ArticleDetailsBlock = memo((props: ArticleDetailsBlockProps) => {
                 return (
                     <ArticleDetailsCodeBlock
                         key={block.id}
-                        classname={cls.block}
+                        className={cls.block}
                         block={block}
                     />
                 );
@@ -59,7 +58,7 @@ export const ArticleDetailsBlock = memo((props: ArticleDetailsBlockProps) => {
                 return (
                     <ArticleDetailsTextBlock
                         key={block.id}
-                        classname={cls.block}
+                        className={cls.block}
                         block={block}
                     />
                 );
@@ -67,7 +66,7 @@ export const ArticleDetailsBlock = memo((props: ArticleDetailsBlockProps) => {
                 return (
                     <ArticleDetailsImageBlock
                         key={block.id}
-                        classname={cls.block}
+                        className={cls.block}
                         block={block}
                     />
                 );
@@ -84,16 +83,16 @@ export const ArticleDetailsBlock = memo((props: ArticleDetailsBlockProps) => {
     if (isLoading) {
         content = (
             <div>
-                <Skeleton classname={cls.avatar} width={200} height={200} borderRadius="50%" />
-                <Skeleton classname={cls.title} width={300} height={32} />
-                <Skeleton classname={cls.skeleton} width={600} height={24} />
-                <Skeleton classname={cls.skeleton} height={200} />
-                <Skeleton classname={cls.skeleton} height={200} />
+                <Skeleton className={cls.avatar} width={200} height={200} borderRadius="50%" />
+                <Skeleton className={cls.title} width={300} height={32} />
+                <Skeleton className={cls.skeleton} width={600} height={24} />
+                <Skeleton className={cls.skeleton} height={200} />
+                <Skeleton className={cls.skeleton} height={200} />
             </div>
         );
     } else if (error) {
         content = <Text variant="error" text={error} align="center" />;
-    } else if (!articleId || !article) {
+    } else if (!article) {
         content = <Text variant="error" text={t('articleNotFound')} align="center" />;
     } else {
         content = (
@@ -120,7 +119,7 @@ export const ArticleDetailsBlock = memo((props: ArticleDetailsBlockProps) => {
         );
     }
     return (
-        <DynamicModuleLoader reducers={reducers} shouldBeRemoved>
+        <DynamicModuleLoader reducers={reducers}>
             <div className={classNames(cls.ArticleDetailsBlock, {}, [classname])}>
                 {content}
             </div>

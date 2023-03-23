@@ -21,11 +21,22 @@ export const CommentList = memo((props: CommentListProps) => {
 
     if (error) return <Text variant="error" text={error} />;
 
+    if (isLoading) {
+        return (
+            <div className={classNames('', {}, [className])}>
+                <CommentCard isLoading />
+                <CommentCard isLoading />
+                <CommentCard isLoading />
+            </div>
+        );
+    }
+
     return (
         <div className={classNames('', {}, [className])}>
             {comments?.length
                 ? comments.map((comment) => (
                     <CommentCard
+                        key={comment.id}
                         isLoading={isLoading}
                         className={cls.comment}
                         comment={comment}

@@ -1,5 +1,9 @@
 {
+  "backToList": "Back to list",
+  "readMore": "Read more",
+  "addComment": "Add comment",
   "noComments": "No comments",
+  "comment": "Comment",
   "comments": "Comments",
   "articleNotFound": "Article not found",
   "lastName": "Last name",

@@ -7,7 +7,7 @@ import { ThemeDecorator } from '../../../../../config/.storybook/decorators/them
 import { StoreDecorator } from '../../../../../config/.storybook/decorators/storeDecorator';
 
 export default {
-    title: 'entities/ArticleDetailsBlock',
+    title: 'entities/Article/ArticleDetailsBlock',
     component: ArticleDetailsBlock,
     argTypes: {},
     args: {

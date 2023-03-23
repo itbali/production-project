@@ -7,6 +7,7 @@ import { profileActions, selectProfileReadOnly, updateProfileData } from 'entiti
 import { useCallback } from 'react';
 import { useAppDispatch } from 'helpers/hooks';
 import cls from './ProfilePageHeader.module.scss';
+import { selectCanEdit } from '../../model/selectors/selectCanEdit/selectCanEdit';
 
 interface ProfilePageHeaderProps {
     className?: string,
@@ -16,6 +17,7 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const readonly = useSelector(selectProfileReadOnly);
+    const canEdit = useSelector(selectCanEdit);
     const onEditClick = useCallback(() => {
         dispatch(profileActions.setReadOnly(!readonly));
         if (!readonly) {
@@ -28,20 +30,24 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     return (
         <div className={classNames(cls.header, {}, [className])}>
             <Text title={t('profile')} />
-            {!readonly && (
-                <Button
-                    onClick={onCancelEdit}
-                    variant={Variant.ERROR}
-                >
-                    {t('reset')}
-                </Button>
+            {canEdit && (
+                <div className={cls.btnsWrapper}>
+                    {!readonly && (
+                        <Button
+                            onClick={onCancelEdit}
+                            variant={Variant.ERROR}
+                        >
+                            {t('reset')}
+                        </Button>
+                    )}
+                    <Button
+                        onClick={onEditClick}
+                        variant={Variant.OUTLINE}
+                    >
+                        {t(readonly ? 'edit' : 'save')}
+                    </Button>
+                </div>
             )}
-            <Button
-                onClick={onEditClick}
-                variant={Variant.OUTLINE}
-            >
-                {t(readonly ? 'edit' : 'save')}
-            </Button>
 
         </div>
     );

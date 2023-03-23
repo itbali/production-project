@@ -14,7 +14,9 @@ interface DynamicModuleLoaderProps {
 
 export const DynamicModuleLoader:FC<DynamicModuleLoaderProps> = (props) => {
     const {
-        children, reducers, shouldBeRemoved,
+        children,
+        reducers,
+        shouldBeRemoved = true,
     } = props;
 
     const dispatch = useAppDispatch();

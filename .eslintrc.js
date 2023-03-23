@@ -36,6 +36,7 @@ module.exports = {
     'react/jsx-one-expression-per-line': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/require-default-props': 'off',
+    'react/no-array-index-key': 'off',
     'no-underscore-dangle': 'off',
     'no-shadow': 'off',
     'no-param-reassign': 'off',
@@ -43,7 +44,7 @@ module.exports = {
       SwitchCase: 1
     }],
     'react/jsx-indent': ['error', 4, {
-      indentLogicalExpressions: true
+      indentLogicalExpressions: true,
     }],
     'react/jsx-indent-props': [2, 4],
     'react/jsx-filename-extension': [1, {

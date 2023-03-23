@@ -68,7 +68,7 @@ const LoginForm = memo(({ className, onSuccessfulLogin }: LoginFormProps) => {
     );
 
     return (
-        <DynamicModuleLoader reducers={initialReducers} shouldBeRemoved>
+        <DynamicModuleLoader reducers={initialReducers}>
 
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t('loginForm')} className={cls.title} />

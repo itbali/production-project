@@ -7,12 +7,11 @@ import {
     profileReducer,
     selectProfileData,
     selectProfileError,
-    selectProfileFormData,
     selectProfileIsLoading,
     selectProfileReadOnly,
 } from 'entities/Profile';
-import { useCallback, useEffect } from 'react';
-import { useAppDispatch } from 'helpers/hooks';
+import { useCallback } from 'react';
+import { useAppDispatch, useInitialEffect } from 'helpers/hooks';
 import { useSelector } from 'react-redux';
 
 import { Currency } from 'entities/Currency';
@@ -23,6 +22,7 @@ import {
 import { Text } from 'shared/ui/Text';
 import { ValidateProfileErrors } from 'entities/Profile/model/types/profile';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 import cls from './ProfilePage.module.scss';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
@@ -37,12 +37,13 @@ interface ProfilePageProps {
 const ProfilePage = ({ className }: ProfilePageProps) => {
     const dispatch = useAppDispatch();
     const { t } = useTranslation();
-    const formData = useSelector(selectProfileFormData);
     const data = useSelector(selectProfileData);
     const error = useSelector(selectProfileError);
     const errors = useSelector(selectProfileValidateErrors);
     const isLoading = useSelector(selectProfileIsLoading);
     const readonly = useSelector(selectProfileReadOnly);
+    const { id } = useParams<{id:string}>();
+
     const onChangeProfileFirstName = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ first: value }));
     }, [dispatch]);
@@ -78,13 +79,12 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         [ValidateProfileErrors.AGE_ERROR]: t('ageError'),
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
-        }
-    }, [dispatch]);
+    useInitialEffect(() => {
+        if (id) dispatch(fetchProfileData(id));
+    });
+
     return (
-        <DynamicModuleLoader reducers={reducers} shouldBeRemoved>
+        <DynamicModuleLoader reducers={reducers}>
             <div className={classNames(cls.ProfilePage, {}, [className])}>
                 <ProfilePageHeader />
                 {errors && errors.map((error) => (

@@ -4,11 +4,6 @@ import { Profile, ValidateProfileErrors } from '../../types/profile';
 import { validateProfileData } from '../validateProfileData/validateProfileData';
 import { selectProfileData } from '../../selectors/selectProfileData/selectProfileData';
 
-interface authData {
-    username: string,
-    password: string,
-}
-
 export const updateProfileData = createAsyncThunk<
     Profile,
     void,
@@ -25,7 +20,7 @@ export const updateProfileData = createAsyncThunk<
         }
 
         try {
-            const response = await extra.api.put('/profile', data);
+            const response = await extra.api.put(`/profile/${data?.id}`, data);
 
             if (!response.data) {
                 throw new Error();

@@ -6,13 +6,13 @@ import { ArticleTextBlock } from '../../model/types/article';
 
 interface ArticleDetailsTextBlockProps {
     block: ArticleTextBlock;
-    classname?: string;
+    className?: string;
 }
 
 export const ArticleDetailsTextBlock = memo((props: ArticleDetailsTextBlockProps) => {
-    const { classname, block } = props;
+    const { className, block } = props;
     return (
-        <div className={classNames(cls.ArticleDetailsTextBlock, {}, [classname])}>
+        <div className={classNames(cls.ArticleDetailsTextBlock, {}, [className])}>
             {block.title && <Text title={block.title} className={cls.title} />}
             {block.paragraphs.map(
                 (p, index) => <Text key={p} text={p} className={cls.paragraph} />,

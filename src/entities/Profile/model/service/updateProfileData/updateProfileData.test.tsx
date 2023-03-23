@@ -7,6 +7,7 @@ import { updateProfileData } from './updateProfileData';
 
 describe('fetchProfileData should', () => {
     const data: Profile = {
+        id: '1',
         first: 'John',
         age: 25,
         lastname: 'Doe',

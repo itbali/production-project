@@ -8,6 +8,7 @@ import { NavigateOptions } from 'react-router';
 import { To } from 'react-router-dom';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailCommentsSchema } from 'pages/ArticleDetailPage';
+import { AddCommentSchema } from 'features/AddComment';
 import { createReducerManager } from './reducerManager';
 
 export interface StateSchema {
@@ -19,6 +20,7 @@ export interface StateSchema {
     profile?: ProfileSchema,
     articleDetails?: ArticleDetailsSchema,
     articleDetailsComments?: ArticleDetailCommentsSchema,
+    addComment?: AddCommentSchema,
 }
 
 export type StateSchemaKey = keyof StateSchema;

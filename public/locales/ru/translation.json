@@ -1,5 +1,9 @@
 {
+  "backToList": "Вернуться к списку",
+  "readMore": "Читать далее",
+  "addComment": "Добавить комментарий",
   "noComments": "Нет комментариев",
+  "comment": "Комментарий",
   "comments": "Комментарии",
   "articleNotFound": "Статья не найдена",
   "lastName": "Фамилия",

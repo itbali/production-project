@@ -6,13 +6,13 @@ import { ArticleCodeBlock } from '../../model/types/article';
 
 interface ArticleDetailsImageBlockProps {
     block: ArticleCodeBlock
-    classname?: string;
+    className?: string;
 }
 
 export const ArticleDetailsCodeBlock = memo((props: ArticleDetailsImageBlockProps) => {
-    const { classname, block } = props;
+    const { className, block } = props;
     return (
-        <div className={classNames(cls.ArticleDetailsCodeBlock, {}, [classname])}>
+        <div className={classNames(cls.ArticleDetailsCodeBlock, {}, [className])}>
             <Code text={block.code} />
         </div>
     );

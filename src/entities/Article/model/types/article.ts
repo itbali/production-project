@@ -1,3 +1,5 @@
+import { User } from 'entities/User';
+
 type ArticleBlockType = 'TEXT' | 'IMAGE' | 'CODE';
 
 interface ArticleBaseBlock {
@@ -29,6 +31,7 @@ export enum ArticleType {
 }
 
 export interface Article {
+    user: User;
     blocks: ArticleBlock[];
     createdAt: string;
     id: string;
