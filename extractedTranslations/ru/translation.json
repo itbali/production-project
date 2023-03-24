@@ -34,6 +34,7 @@
   "logout": "logout",
   "main-page": "main-page",
   "mainPage": "mainPage",
+  "noArticles": "noArticles",
   "noComments": "noComments",
   "noDataError": "noDataError",
   "notFoundPage": {

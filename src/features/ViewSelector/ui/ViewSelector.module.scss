@@ -1,0 +1,9 @@
+.ViewSelector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.unActive {
+    fill: var(--secondary-color);
+}

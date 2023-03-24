@@ -1,16 +1,17 @@
 import { memo } from 'react';
 import { classNames } from 'helpers/classNames';
-import { ArticleListItem } from 'entities/Article/ui/ArticleListItem/ArticleListItem';
-import {
-    ArticleListItemSkeleton,
-} from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
-import cls from './ArticlesList.module.scss';
+import { Text } from 'shared/ui/Text';
+import { useTranslation } from 'react-i18next';
+import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { Article } from '../../model/types/article';
+import cls from './ArticlesList.module.scss';
 
 interface ArticlesListProps {
     className?: string,
     articles: Article[],
     isLoading?: boolean,
+    error?: string,
     view?: 'grid' | 'list',
 }
 
@@ -20,7 +21,9 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
         articles,
         isLoading,
         view = 'list',
+        error,
     } = props;
+    const { t } = useTranslation();
 
     if (isLoading) {
         return (
@@ -29,6 +32,12 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
                     <ArticleListItemSkeleton key={i} view={view} />
                 ))}
             </div>
+        );
+    }
+
+    if (error && !isLoading) {
+        return (
+            <Text text={error} />
         );
     }
 
