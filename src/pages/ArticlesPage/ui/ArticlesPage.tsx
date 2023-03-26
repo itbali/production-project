@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from 'helpers/classNames';
 import { ArticlesList } from 'entities/Article/ui/ArticlesList/ArticlesList';
@@ -6,6 +6,13 @@ import { DynamicModuleLoader, ReducersList } from 'helpers/components/DynamicMod
 import { useAppDispatch, useInitialEffect } from 'helpers/hooks';
 import { ViewSelector } from 'features/ViewSelector';
 import { LOCAL_STORAGE } from 'shared/const/LOCAL_STORAGE';
+import {
+    selectArticlesPageNumber,
+} from 'pages/ArticlesPage/model/selectors/selectArticlesPageNumber/selectArticlesPageNumber';
+import { Page } from 'shared/ui/Page';
+import {
+    fetchNextArticles,
+} from 'pages/ArticlesPage/model/services/fetchNextArticles/fetchNextArticles';
 import {
     selectIsLoadingArticles,
 } from '../model/selectors/selectIsLoadingArticles/selectIsLoadingArticles';
@@ -36,9 +43,10 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const articles = useSelector(selectAllArticles);
     const isLoading = useSelector(selectIsLoadingArticles);
     const error = useSelector(selectArticlesError);
+    const page = useSelector(selectArticlesPageNumber);
 
     useInitialEffect(() => {
-        dispatch(fetchArticles());
+        dispatch(fetchArticles({ page }));
         if (!view) {
             const viewFromLocalStorage = localStorage.getItem(LOCAL_STORAGE.articlesPageView);
             if (viewFromLocalStorage) {
@@ -46,14 +54,22 @@ const ArticlesPage = (props: ArticlesPageProps) => {
             }
         }
     });
-    const handleChangeView = (view: 'list' | 'grid') => {
+    const handleChangeView = useCallback((view: 'list' | 'grid') => {
         dispatch(ArticlesPageActions.setView(view));
+        dispatch(ArticlesPageActions.setLimit(view === 'list' ? 3 : 6));
         localStorage.setItem(LOCAL_STORAGE.articlesPageView, view);
-    };
+    }, [dispatch]);
+
+    const onScrollEnd = useCallback(() => {
+        dispatch(fetchNextArticles());
+    }, [dispatch]);
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.ArticlesPage, {}, [className])}>
+            <Page
+                onScrollEnd={onScrollEnd}
+                className={classNames(cls.ArticlesPage, {}, [className])}
+            >
                 <ViewSelector view={view} onChangeView={handleChangeView} />
                 <ArticlesList
                     articles={articles}
@@ -61,7 +77,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
                     isLoading={isLoading}
                     error={error}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

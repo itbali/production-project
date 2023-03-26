@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import { classNames } from 'helpers/classNames';
 import { Text } from 'shared/ui/Text';
-import { useTranslation } from 'react-i18next';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { Article } from '../../model/types/article';
@@ -23,17 +22,6 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
         view = 'list',
         error,
     } = props;
-    const { t } = useTranslation();
-
-    if (isLoading) {
-        return (
-            <div className={classNames('', {}, [className, cls[view]])}>
-                {Array(view === 'grid' ? 9 : 3).fill(0).map((_, i) => (
-                    <ArticleListItemSkeleton key={i} view={view} />
-                ))}
-            </div>
-        );
-    }
 
     if (error && !isLoading) {
         return (
@@ -50,6 +38,13 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
             {articles.map((article) => (
                 renderArticle(article)
             ))}
+            {isLoading && (
+                <div className={classNames('', {}, [className, cls[view]])}>
+                    {Array(view === 'grid' ? 9 : 3).fill(0).map((_, i) => (
+                        <ArticleListItemSkeleton key={i} view={view} />
+                    ))}
+                </div>
+            )}
         </div>
     );
 });

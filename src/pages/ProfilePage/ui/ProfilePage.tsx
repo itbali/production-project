@@ -13,7 +13,6 @@ import {
 import { useCallback } from 'react';
 import { useAppDispatch, useInitialEffect } from 'helpers/hooks';
 import { useSelector } from 'react-redux';
-
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country/model/types/country';
 import {
@@ -23,6 +22,7 @@ import { Text } from 'shared/ui/Text';
 import { ValidateProfileErrors } from 'entities/Profile/model/types/profile';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page';
 import cls from './ProfilePage.module.scss';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
@@ -85,7 +85,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.ProfilePage, {}, [className])}>
+            <Page className={classNames(cls.ProfilePage, {}, [className])}>
                 <ProfilePageHeader />
                 {errors && errors.map((error) => (
                     <Text key={error} align="center" variant="error" text={validateErrorsMap[error]} />
@@ -104,7 +104,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                     onChangeCountry={onChangeProfileCountry}
                     readonly={readonly}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

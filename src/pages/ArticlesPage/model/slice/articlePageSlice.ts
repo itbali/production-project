@@ -13,6 +13,9 @@ const initialState = articlesPageAdapter.getInitialState<ArticlesPageSchema>({
     ids: [],
     entities: {},
     view: 'grid',
+    hasMore: true,
+    page: 1,
+    limit: 9,
 });
 
 export const ArticlesPageSlice = createSlice({
@@ -21,6 +24,12 @@ export const ArticlesPageSlice = createSlice({
     reducers: {
         setView: (state, action: PayloadAction<'grid'|'list'>) => {
             state.view = action.payload;
+        },
+        setPage: (state, action: PayloadAction<number>) => {
+            state.page = action.payload;
+        },
+        setLimit: (state, action: PayloadAction<number>) => {
+            state.limit = action.payload;
         },
     },
     extraReducers: (builder) => {
@@ -31,7 +40,8 @@ export const ArticlesPageSlice = createSlice({
             })
             .addCase(fetchArticles.fulfilled, (state, action) => {
                 state.isLoading = false;
-                articlesPageAdapter.setAll(state, action.payload);
+                articlesPageAdapter.addMany(state, action.payload);
+                state.hasMore = action.payload.length === state.limit;
             })
             .addCase(fetchArticles.rejected, (state, action) => {
                 state.isLoading = false;

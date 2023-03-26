@@ -11,6 +11,7 @@ import { useAppDispatch, useInitialEffect } from 'helpers/hooks';
 import { AddComment } from 'features/AddComment';
 import { Button, Variant } from 'shared/ui/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page';
 import {
     fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -62,7 +63,7 @@ const ArticleDetailPage = (props: ArticleDetailPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.ArticleDetailPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailPage, {}, [className])}>
                 <Button variant={Variant.OUTLINE} onClick={onGoBackClick}>{t('backToList')}</Button>
                 <ArticleDetailsBlock articleId={id} />
                 <Text className={cls.commentTitle} title={t('comments')} />
@@ -72,7 +73,7 @@ const ArticleDetailPage = (props: ArticleDetailPageProps) => {
                     isLoading={isLoading}
                     comments={comments}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };
