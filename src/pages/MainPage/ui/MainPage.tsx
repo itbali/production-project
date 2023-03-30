@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button';
 import { Counter } from 'entities/Counter';
-import { Page } from 'shared/ui/Page';
+import { Page } from 'widgets/Page';
 
 function MainPage() {
     const { t } = useTranslation();

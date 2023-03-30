@@ -22,7 +22,7 @@ import { Text } from 'shared/ui/Text';
 import { ValidateProfileErrors } from 'entities/Profile/model/types/profile';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import { Page } from 'shared/ui/Page';
+import { Page } from 'widgets/Page';
 import cls from './ProfilePage.module.scss';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 

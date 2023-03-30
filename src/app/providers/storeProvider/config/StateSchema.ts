@@ -8,11 +8,13 @@ import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailCommentsSchema } from 'pages/ArticleDetailPage';
 import { AddCommentSchema } from 'features/AddComment';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { ScrollSaveSchema } from 'features/ScrollSave';
 import { createReducerManager } from './reducerManager';
 
 export interface StateSchema {
     counter: CounterSchema,
     user: UserSchema,
+    scrollSave: ScrollSaveSchema,
 
     // async reducers
     loginForm?: LoginSchema,

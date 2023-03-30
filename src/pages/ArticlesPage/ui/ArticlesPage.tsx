@@ -6,7 +6,7 @@ import { DynamicModuleLoader, ReducersList } from 'helpers/components/DynamicMod
 import { useAppDispatch, useInitialEffect } from 'helpers/hooks';
 import { ViewSelector } from 'features/ViewSelector';
 import { LOCAL_STORAGE } from 'shared/const/LOCAL_STORAGE';
-import { Page } from 'shared/ui/Page';
+import { Page } from 'widgets/Page';
 import { fetchNextArticles } from '../model/services/fetchNextArticles/fetchNextArticles';
 import {
     selectIsLoadingArticles,
