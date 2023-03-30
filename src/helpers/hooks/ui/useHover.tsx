@@ -7,10 +7,8 @@ type useHoverReturnType = [
         onMouseLeave: () => void,
     }
 ];
-
 export const useHover = ():useHoverReturnType => {
     const [isHovered, setIsHovered] = useState(false);
-
     const onMouseEnter = useCallback(() => setIsHovered(true), []);
     const onMouseLeave = useCallback(() => setIsHovered(false), []);
 

@@ -33,7 +33,7 @@ export const getSideBarItems = createSelector(
                     authOnly: true,
                 },
                 {
-                    path: RoutePath.profile,
+                    path: RoutePath.profile + user.id,
                     text: 'profile-page',
                     icon: <ProfileSVG />,
                     authOnly: true,

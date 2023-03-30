@@ -20,7 +20,6 @@ export const loginByUsername = createAsyncThunk< User, authData, ThunkConfig<str
             }
             localStorage.setItem(LOCAL_STORAGE.user, JSON.stringify(response.data));
             dispatch(userActions.setUser(response.data));
-            extra.navigate?.('/');
             return response.data;
         } catch (error) {
             if (axios.isAxiosError(error)) {

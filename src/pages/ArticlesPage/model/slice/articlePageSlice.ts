@@ -16,6 +16,7 @@ const initialState = articlesPageAdapter.getInitialState<ArticlesPageSchema>({
     hasMore: true,
     page: 1,
     limit: 9,
+    _inited: false,
 });
 
 export const ArticlesPageSlice = createSlice({
@@ -31,6 +32,9 @@ export const ArticlesPageSlice = createSlice({
         setLimit: (state, action: PayloadAction<number>) => {
             state.limit = action.payload;
         },
+        setInited: (state) => {
+            state._inited = true;
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -40,7 +44,7 @@ export const ArticlesPageSlice = createSlice({
             })
             .addCase(fetchArticles.fulfilled, (state, action) => {
                 state.isLoading = false;
-                articlesPageAdapter.addMany(state, action.payload);
+                articlesPageAdapter.upsertMany(state, action.payload);
                 state.hasMore = action.payload.length === state.limit;
             })
             .addCase(fetchArticles.rejected, (state, action) => {

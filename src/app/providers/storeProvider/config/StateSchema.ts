@@ -4,8 +4,6 @@ import { LoginSchema } from 'features/AuthByUserName';
 import { EnhancedStore } from '@reduxjs/toolkit';
 import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
-import { NavigateOptions } from 'react-router';
-import { To } from 'react-router-dom';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailCommentsSchema } from 'pages/ArticleDetailPage';
 import { AddCommentSchema } from 'features/AddComment';
@@ -32,7 +30,6 @@ export interface reduxStoreWithReducerManager extends EnhancedStore<StateSchema>
 
 export interface ThunkExtraArgument {
     api: AxiosInstance,
-    navigate?: (to: To, options?: NavigateOptions) => void,
 }
 export interface ThunkConfig<T> {
     rejectValue: T,

@@ -1,18 +1,13 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from 'helpers/classNames';
-import { ArticlesList } from 'entities/Article/ui/ArticlesList/ArticlesList';
+import { ArticlesList } from 'entities/Article';
 import { DynamicModuleLoader, ReducersList } from 'helpers/components/DynamicModuleLoader';
 import { useAppDispatch, useInitialEffect } from 'helpers/hooks';
 import { ViewSelector } from 'features/ViewSelector';
 import { LOCAL_STORAGE } from 'shared/const/LOCAL_STORAGE';
-import {
-    selectArticlesPageNumber,
-} from 'pages/ArticlesPage/model/selectors/selectArticlesPageNumber/selectArticlesPageNumber';
 import { Page } from 'shared/ui/Page';
-import {
-    fetchNextArticles,
-} from 'pages/ArticlesPage/model/services/fetchNextArticles/fetchNextArticles';
+import { fetchNextArticles } from '../model/services/fetchNextArticles/fetchNextArticles';
 import {
     selectIsLoadingArticles,
 } from '../model/selectors/selectIsLoadingArticles/selectIsLoadingArticles';
@@ -26,7 +21,7 @@ import {
 import {
     selectArticlesPageView,
 } from '../model/selectors/selectArticlesPageView/selectArticlesPageView';
-import { fetchArticles } from '../model/services/fetchArticles/fetchArticles';
+import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage';
 
 interface ArticlesPageProps {
     className?: string,
@@ -43,16 +38,9 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const articles = useSelector(selectAllArticles);
     const isLoading = useSelector(selectIsLoadingArticles);
     const error = useSelector(selectArticlesError);
-    const page = useSelector(selectArticlesPageNumber);
 
     useInitialEffect(() => {
-        dispatch(fetchArticles({ page }));
-        if (!view) {
-            const viewFromLocalStorage = localStorage.getItem(LOCAL_STORAGE.articlesPageView);
-            if (viewFromLocalStorage) {
-                dispatch(ArticlesPageActions.setView(viewFromLocalStorage as 'list' | 'grid'));
-            }
-        }
+        dispatch(initArticlesPage());
     });
     const handleChangeView = useCallback((view: 'list' | 'grid') => {
         dispatch(ArticlesPageActions.setView(view));

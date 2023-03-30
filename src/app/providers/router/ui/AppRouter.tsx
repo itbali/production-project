@@ -9,7 +9,7 @@ import { RequireAuth } from 'app/providers/router/ui/RequireAuth';
 const AppRouter = () => {
     const renderWithWrapper = useCallback((route: AppRouteProps) => {
         const element = (
-            <Suspense fallback={<Spinner />}>
+            <Suspense key={route.path} fallback={<Spinner />}>
                 {route.element}
             </Suspense>
         );

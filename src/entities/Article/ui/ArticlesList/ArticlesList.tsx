@@ -30,7 +30,11 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
     }
 
     const renderArticle = (article: Article) => (
-        <ArticleListItem key={article.id} article={article} view={view} />
+        <ArticleListItem
+            key={article.id}
+            article={article}
+            view={view}
+        />
     );
 
     return (

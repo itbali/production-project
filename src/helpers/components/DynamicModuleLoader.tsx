@@ -16,13 +16,16 @@ export const DynamicModuleLoader:FC<DynamicModuleLoaderProps> = (props) => {
     const {
         children,
         reducers,
-        shouldBeRemoved = true,
+        shouldBeRemoved = false,
     } = props;
 
     const dispatch = useAppDispatch();
     const store = useStore() as reduxStoreWithReducerManager;
+    const mountedReducers = Object.keys(store.reducerManager.getReducerMap());
     useEffect(() => {
         Object.entries(reducers).forEach(([reducerName, reducer]) => {
+            // check if reducer is already mounted
+            if (mountedReducers.includes(reducerName)) return;
             store.reducerManager.add(reducerName as StateSchemaKey, reducer);
             dispatch({ type: `@INIT reducer ${reducerName}` });
         });
@@ -34,6 +37,6 @@ export const DynamicModuleLoader:FC<DynamicModuleLoaderProps> = (props) => {
                 });
             }
         };
-    }, [dispatch, reducers, shouldBeRemoved, store.reducerManager]);
+    }, [dispatch, mountedReducers, reducers, shouldBeRemoved, store.reducerManager]);
     return children as JSX.Element;
 };
