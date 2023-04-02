@@ -34,10 +34,19 @@ export const AppLinkSecondary = Template.bind({});
 AppLinkSecondary.args = {
     theme: AppLinkTheme.SECONDARY,
 };
+
 export const AppLinkDark = Template.bind({});
 AppLinkDark.decorators = [ThemeDecorator(Theme.DARK)];
 export const AppLinkDarkSecondary = Template.bind({});
 AppLinkDarkSecondary.decorators = [ThemeDecorator(Theme.DARK)];
 AppLinkDarkSecondary.args = {
+    theme: AppLinkTheme.SECONDARY,
+};
+
+export const AppLinkGreen = Template.bind({});
+AppLinkGreen.decorators = [ThemeDecorator(Theme.GREEN)];
+export const AppLinkGreenSecondary = Template.bind({});
+AppLinkGreenSecondary.decorators = [ThemeDecorator(Theme.GREEN)];
+AppLinkGreenSecondary.args = {
     theme: AppLinkTheme.SECONDARY,
 };

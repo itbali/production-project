@@ -16,3 +16,5 @@ const Template: ComponentStory<typeof SpinnerComponent> = () => <SpinnerComponen
 export const Spinner = Template.bind({});
 export const SpinnerDark = Template.bind({});
 SpinnerDark.decorators = [ThemeDecorator(Theme.DARK)];
+export const SpinnerGreen = Template.bind({});
+SpinnerGreen.decorators = [ThemeDecorator(Theme.GREEN)];

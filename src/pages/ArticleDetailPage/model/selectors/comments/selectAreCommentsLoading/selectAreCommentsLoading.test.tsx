@@ -4,8 +4,10 @@ import { selectAreCommentsLoading } from './selectAreCommentsLoading';
 describe('selectAreCommentsLoading should', () => {
     it(' return true if provided', () => {
         const state: DeepPartial<StateSchema> = {
-            articleDetailsComments: {
-                isLoading: true,
+            articleDetailsPage: {
+                articleDetailsComments: {
+                    isLoading: true,
+                },
             },
         };
         const result = selectAreCommentsLoading(state as StateSchema);
@@ -13,8 +15,10 @@ describe('selectAreCommentsLoading should', () => {
     });
     it(' return false if provided', () => {
         const state: DeepPartial<StateSchema> = {
-            articleDetailsComments: {
-                isLoading: false,
+            articleDetailsPage: {
+                articleDetailsComments: {
+                    isLoading: false,
+                },
             },
         };
         const result = selectAreCommentsLoading(state as StateSchema);
@@ -22,7 +26,7 @@ describe('selectAreCommentsLoading should', () => {
     });
     it(' return false if not provided', () => {
         const state: DeepPartial<StateSchema> = {
-            articleDetailsComments: undefined,
+            articleDetailsPage: { articleDetailsComments: undefined },
         };
         const result = selectAreCommentsLoading(state as StateSchema);
         expect(result).toBeFalsy();

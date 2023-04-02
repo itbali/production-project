@@ -4,7 +4,7 @@ import { Button } from 'shared/ui/Button';
 import { Icon } from 'shared/ui/Icon';
 import ListIcon from 'shared/assets/icons/list.svg';
 import GridIcon from 'shared/assets/icons/grid.svg';
-import cls from './ViewSelector.module.scss';
+import cls from './ArticleViewSelector.module.scss';
 
 type ViewSelectorProps = {
     className?: string,
@@ -12,7 +12,7 @@ type ViewSelectorProps = {
     onChangeView: (view: 'list' | 'grid') => void,
 }
 
-export const ViewSelector = memo((props: ViewSelectorProps) => {
+export const ArticleViewSelector = memo((props: ViewSelectorProps) => {
     const {
         className,
         view = 'list',

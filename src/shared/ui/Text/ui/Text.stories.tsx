@@ -59,6 +59,25 @@ TitleAndTextDark.args = {
 };
 TitleAndTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
+export const OnlyTextGreen = Template.bind({});
+OnlyTextGreen.args = {
+    text: 'Text',
+};
+OnlyTextGreen.decorators = [ThemeDecorator(Theme.GREEN)];
+
+export const OnlyTitleGreen = Template.bind({});
+OnlyTitleGreen.args = {
+    title: 'Title',
+};
+OnlyTitleGreen.decorators = [ThemeDecorator(Theme.GREEN)];
+
+export const TitleAndTextGreen = Template.bind({});
+TitleAndTextGreen.args = {
+    title: 'Title',
+    text: 'Text',
+};
+TitleAndTextGreen.decorators = [ThemeDecorator(Theme.GREEN)];
+
 export const TitleAndTextSizeSmall = Template.bind({});
 TitleAndTextSizeSmall.args = {
     title: 'Title',

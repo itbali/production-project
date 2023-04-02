@@ -40,7 +40,9 @@ export const ArticleDetailCommentsSlice = createSlice({
 export const {
     selectAll: selectAllComments,
 } = commentsAdapter.getSelectors<StateSchema>(
-    (state: StateSchema) => state.articleDetailsComments || commentsAdapter.getInitialState(),
+    (state: StateSchema) => (
+        state.articleDetailsPage?.articleDetailsComments || commentsAdapter.getInitialState()
+    ),
 );
 export const {
     reducer: ArticleDetailCommentsReducer,

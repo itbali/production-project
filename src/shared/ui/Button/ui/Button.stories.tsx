@@ -45,6 +45,9 @@ export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {};
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
+export const PrimaryGreen = Template.bind({});
+PrimaryGreen.decorators = [ThemeDecorator(Theme.GREEN)];
+
 export const PrimarySmall = Template.bind({});
 PrimarySmall.args = {
     size: ButtonSize.S,

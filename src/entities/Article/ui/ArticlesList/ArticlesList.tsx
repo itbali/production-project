@@ -1,6 +1,7 @@
-import { memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'helpers/classNames';
 import { Text } from 'shared/ui/Text';
+import { useTranslation } from 'react-i18next';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { Article } from '../../model/types/article';
@@ -12,6 +13,7 @@ interface ArticlesListProps {
     isLoading?: boolean,
     error?: string,
     view?: 'grid' | 'list',
+    target?: HTMLAttributeAnchorTarget,
 }
 
 export const ArticlesList = memo((props: ArticlesListProps) => {
@@ -21,7 +23,9 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
         isLoading,
         view = 'list',
         error,
+        target = '_self',
     } = props;
+    const { t } = useTranslation();
 
     if (error && !isLoading) {
         return (
@@ -34,9 +38,15 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
             key={article.id}
             article={article}
             view={view}
+            target={target}
         />
     );
 
+    if (!articles.length && !isLoading) {
+        return (
+            <Text text={t('NoArticles')} />
+        );
+    }
     return (
         <div className={classNames('', {}, [className, cls[view]])}>
             {articles.map((article) => (

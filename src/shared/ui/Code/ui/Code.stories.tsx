@@ -31,3 +31,5 @@ const Template: ComponentStory<typeof Code> = (args) => <Code {...args} />;
 export const CodePrimary = Template.bind({});
 export const CodeDark = Template.bind({});
 CodeDark.decorators = [ThemeDecorator(Theme.DARK)];
+export const CodeGreen = Template.bind({});
+CodeGreen.decorators = [ThemeDecorator(Theme.GREEN)];

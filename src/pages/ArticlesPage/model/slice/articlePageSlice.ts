@@ -1,6 +1,6 @@
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/storeProvider';
-import { Article } from 'entities/Article';
+import { Article, ArticleSortView, ArticleType } from 'entities/Article';
 import { ArticlesPageSchema } from '../types/ArticlePageSchema';
 import { fetchArticles } from '../services/fetchArticles/fetchArticles';
 
@@ -17,6 +17,10 @@ const initialState = articlesPageAdapter.getInitialState<ArticlesPageSchema>({
     page: 1,
     limit: 9,
     _inited: false,
+    order: 'asc',
+    sort: ArticleSortView.CREATED_AT,
+    search: '',
+    tabValue: ArticleType.ALL,
 });
 
 export const ArticlesPageSlice = createSlice({
@@ -32,15 +36,31 @@ export const ArticlesPageSlice = createSlice({
         setLimit: (state, action: PayloadAction<number>) => {
             state.limit = action.payload;
         },
+        setOrder: (state, action: PayloadAction<'asc'|'desc'>) => {
+            state.order = action.payload;
+        },
+        setSort: (state, action: PayloadAction<ArticleSortView>) => {
+            state.sort = action.payload;
+        },
+        setSearch: (state, action: PayloadAction<string>) => {
+            state.search = action.payload;
+        },
         setInited: (state) => {
             state._inited = true;
+        },
+        setTabValue: (state, action: PayloadAction<ArticleType>) => {
+            state.tabValue = action.payload;
         },
     },
     extraReducers: (builder) => {
         builder
-            .addCase(fetchArticles.pending, (state) => {
+            .addCase(fetchArticles.pending, (state, action) => {
                 state.error = undefined;
                 state.isLoading = true;
+
+                if (action.meta.arg.replace) {
+                    articlesPageAdapter.removeAll(state);
+                }
             })
             .addCase(fetchArticles.fulfilled, (state, action) => {
                 state.isLoading = false;

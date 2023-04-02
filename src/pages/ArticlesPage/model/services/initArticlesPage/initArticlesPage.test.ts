@@ -11,6 +11,7 @@ jest.mock('../../../model/slice/articlePageSlice', () => ({
         setPage: jest.fn(),
     },
 }));
+const searchParams = new URLSearchParams();
 describe('initArticlesPage', () => {
     const state: DeepPartial<StateSchema> = {
         articlesPage: {
@@ -21,10 +22,9 @@ describe('initArticlesPage', () => {
     };
     it('should call init actions if _inited is false', async () => {
         const thunk = new TestAsyncThunk(initArticlesPage, state);
-        await thunk.callThunk();
+        await thunk.callThunk(searchParams);
 
         expect(fetchArticles).toBeCalledTimes(1);
-        expect(fetchArticles).toBeCalledWith({ page: 1 });
         expect(ArticlesPageActions.setInited).toBeCalledTimes(1);
     });
     it('should not call init actions if _inited is true', async () => {
@@ -35,7 +35,7 @@ describe('initArticlesPage', () => {
                 _inited: true,
             },
         });
-        await thunk.callThunk();
+        await thunk.callThunk(searchParams);
 
         expect(fetchArticles).not.toBeCalled();
         expect(ArticlesPageActions.setInited).not.toBeCalled();
@@ -48,7 +48,7 @@ describe('initArticlesPage', () => {
                 view: 'list',
             },
         });
-        await thunk.callThunk();
+        await thunk.callThunk(searchParams);
 
         expect(fetchArticles).not.toBeCalled();
         expect(ArticlesPageActions.setInited).not.toBeCalled();

@@ -28,3 +28,5 @@ const Template: ComponentStory<typeof ModalComponent> = (args) => <ModalComponen
 export const Modal = Template.bind({});
 export const ModalDark = Template.bind({});
 ModalDark.decorators = [ThemeDecorator(Theme.DARK)];
+export const ModalGreen = Template.bind({});
+ModalGreen.decorators = [ThemeDecorator(Theme.GREEN)];

@@ -45,3 +45,5 @@ SelectWithoutLabelDark.decorators = [ThemeDecorator(Theme.DARK)];
 SelectWithoutLabelDark.args = {
     label: '',
 };
+export const SelectWithLabelGreen = Template.bind({});
+SelectWithLabelGreen.decorators = [ThemeDecorator(Theme.GREEN)];

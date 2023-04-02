@@ -1,0 +1,20 @@
+.ArticlePageFilters {
+    display: block;
+}
+
+.sortWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.search {
+    width: 100%;
+}
+
+.tabs {
+    margin-top: 20px;
+}

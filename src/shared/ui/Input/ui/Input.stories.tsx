@@ -49,3 +49,18 @@ InputWithLabelAndValueDark.args = {
     value: 'Value',
 };
 InputWithLabelAndValueDark.decorators = [ThemeDecorator(Theme.DARK)];
+export const InputGreen = Template.bind({});
+InputGreen.decorators = [ThemeDecorator(Theme.GREEN)];
+
+export const InputWithLabelGreen = Template.bind({});
+InputWithLabelGreen.args = {
+    placeholder: 'Label',
+};
+InputWithLabelGreen.decorators = [ThemeDecorator(Theme.GREEN)];
+
+export const InputWithLabelAndValueGreen = Template.bind({});
+InputWithLabelAndValueGreen.args = {
+    placeholder: 'Label',
+    value: 'Value',
+};
+InputWithLabelAndValueGreen.decorators = [ThemeDecorator(Theme.GREEN)];

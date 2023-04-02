@@ -2,6 +2,12 @@ import { User } from 'entities/User';
 
 type ArticleBlockType = 'TEXT' | 'IMAGE' | 'CODE';
 
+export enum ArticleSortView {
+    VIEWS = 'views',
+    TITLE = 'title',
+    CREATED_AT = 'createdAt',
+}
+
 interface ArticleBaseBlock {
     id: number;
     type: ArticleBlockType;
@@ -25,6 +31,7 @@ export interface ArticleTextBlock extends ArticleBaseBlock {
 export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock;
 
 export enum ArticleType {
+    'ALL' = 'ALL',
     IT= 'IT',
     SCIENCE = 'SCIENCE',
     ECONOMY = 'ECONOMY',

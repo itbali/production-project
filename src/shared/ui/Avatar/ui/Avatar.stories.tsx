@@ -37,6 +37,9 @@ export const AvatarSmall = Template.bind({});
 export const AvatarSmallDark = Template.bind({});
 AvatarSmallDark.decorators = [ThemeDecorator(Theme.DARK)];
 
+export const AvatarSmallGreen = Template.bind({});
+AvatarSmallGreen.decorators = [ThemeDecorator(Theme.GREEN)];
+
 export const AvatarMedium = Template.bind({});
 AvatarMedium.args = {
     size: 'medium',

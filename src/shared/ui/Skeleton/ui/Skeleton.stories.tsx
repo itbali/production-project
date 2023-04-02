@@ -45,3 +45,5 @@ SkeletonRounded.args = {
 };
 export const SkeletonDarkText = Template.bind({});
 SkeletonDarkText.decorators = [ThemeDecorator(Theme.DARK)];
+export const SkeletonGreenText = Template.bind({});
+SkeletonGreenText.decorators = [ThemeDecorator(Theme.GREEN)];
