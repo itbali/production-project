@@ -7,6 +7,7 @@ export interface BuildPath {
     src: string,
     locales: string,
     buildLocales: string,
+    redirects: string,
 }
 
 export interface BuildEnv {

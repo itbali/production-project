@@ -27,6 +27,7 @@ export function buildPlugins(
         new CopyPlugin({
             patterns: [
                 { from: paths.locales, to: paths.buildLocales },
+                { from: paths.redirects, to: paths.build },
             ],
             options: {
                 concurrency: 100,

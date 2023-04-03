@@ -11,6 +11,9 @@ module.exports = async ({ config } : { config: webpack.Configuration }) => {
         src: path.resolve(__dirname, '..','..', 'src'),
         html:'',
         build:'',
+        locales:'',
+        buildLocales:'',
+        redirects:'',
     }
 
     const fileLoaderRule = config.module!.rules!.find(
