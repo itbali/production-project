@@ -10,15 +10,16 @@
 
     transition: 0.3s;
 
-    h2 {
+    .logo {
+        width: var(--sidebar-width);
         color: var(--inverted-primary-color);
+    }
+
+    .createArticleLink {
+        margin-left: 10px;
     }
 }
 
 .links {
     margin-left: auto;
-
-    .mainLink {
-        margin-right: 15px;
-    }
 }

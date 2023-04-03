@@ -1,7 +1,7 @@
 import { classNames } from 'helpers/classNames';
 import { memo, useCallback } from 'react';
 import { ArticleDetailsBlock, ArticlesList } from 'entities/Article';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Text } from 'shared/ui/Text';
 import { useTranslation } from 'react-i18next';
 import { CommentList } from 'entities/Comment';
@@ -9,9 +9,8 @@ import { DynamicModuleLoader, ReducersList } from 'helpers/components/DynamicMod
 import { useSelector } from 'react-redux';
 import { useAppDispatch, useInitialEffect } from 'helpers/hooks';
 import { AddComment } from 'features/AddComment';
-import { Button, Variant } from 'shared/ui/Button';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page';
+import { ArticleDetailPageHeader } from '../ArticleDetailPageHeader/ArticleDetailPageHeader';
 import {
     fetchArticleRecommendations,
 } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
@@ -55,7 +54,6 @@ const ArticleDetailPage = (props: ArticleDetailPageProps) => {
     const isLoading = useSelector(selectAreCommentsLoading);
     const recommendationsIsLoading = useSelector(selectArticleRecommendationsLoading);
     const recommendations = useSelector(selectAllArticleDetailRecommendations);
-    const navigate = useNavigate();
 
     useInitialEffect(() => {
         if (id) dispatch(fetchCommentsByArticleId(id));
@@ -67,14 +65,10 @@ const ArticleDetailPage = (props: ArticleDetailPageProps) => {
         dispatch(fetchCommentsByArticleId(id));
     }, [dispatch, id]);
 
-    const onGoBackClick = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
-
     return (
         <DynamicModuleLoader reducers={reducers}>
             <Page className={classNames(cls.ArticleDetailPage, {}, [className])}>
-                <Button variant={Variant.OUTLINE} onClick={onGoBackClick}>{t('backToList')}</Button>
+                <ArticleDetailPageHeader />
                 <ArticleDetailsBlock articleId={id} />
                 <Text size="large" className={cls.commentTitle} title={t('recommend')} />
                 <ArticlesList

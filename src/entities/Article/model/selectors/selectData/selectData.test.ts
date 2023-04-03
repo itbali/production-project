@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/storeProvider';
 import { mockArticle } from 'shared/assets/test/mockedArticle';
-import { selectData } from './selectData';
+import { selectArticleDetailsData } from './selectArticleDetailsData';
 
 describe('selectData should', () => {
     const state: DeepPartial<StateSchema> = {
@@ -9,11 +9,11 @@ describe('selectData should', () => {
         },
     };
     it(' should return article if provided', () => {
-        const result = selectData(state as StateSchema);
+        const result = selectArticleDetailsData(state as StateSchema);
         expect(result).toEqual(mockArticle);
     });
     it(' should return undefined if not provided', () => {
-        const result = selectData({} as StateSchema);
+        const result = selectArticleDetailsData({} as StateSchema);
         expect(result).toBeUndefined();
     });
 });

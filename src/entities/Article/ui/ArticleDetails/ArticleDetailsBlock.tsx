@@ -24,7 +24,9 @@ import cls from './ArticleDetailsBlock.module.scss';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { selectError } from '../../model/selectors/selectError/selectError';
 import { selectIsLoading } from '../../model/selectors/selectIsLoading/selectIsLoading';
-import { selectData } from '../../model/selectors/selectData/selectData';
+import {
+    selectArticleDetailsData,
+} from '../../model/selectors/selectData/selectArticleDetailsData';
 import { ArticleBlock } from '../../model/types/article';
 
 interface ArticleDetailsBlockProps {
@@ -42,7 +44,7 @@ export const ArticleDetailsBlock = memo((props: ArticleDetailsBlockProps) => {
     const dispatch = useAppDispatch();
     const error = useSelector(selectError);
     const isLoading = useSelector(selectIsLoading);
-    const article = useSelector(selectData);
+    const article = useSelector(selectArticleDetailsData);
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {

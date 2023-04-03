@@ -33,7 +33,6 @@ export const Page = (props: PagePorps) => {
     useInfinitiveScroll({ wrapperRef, triggerRef, onIntersect: onScrollEnd });
 
     const onSectionScroll = useThrottledCallback((event: UIEvent<HTMLElement>) => {
-        console.log('scroll');
         dispatch(
             ScrollSaveActions.setScrollPosition(
                 { path: location.pathname, position: event.currentTarget.scrollTop },

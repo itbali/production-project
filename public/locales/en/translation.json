@@ -1,4 +1,6 @@
 {
+  "createArticle": "Create article",
+  "editArticle": "Edit article ",
   "recommend": "Recommend",
   "NoArticles": "No articles yet",
   "science": "Science",

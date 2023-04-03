@@ -3,6 +3,6 @@ import { ArticleDetailCommentsReducer } from '../slice/ArticleDetailCommentsSlic
 import { ArticleDetailRecommendationsReducer } from '../slice/ArticleDetailRecomendationsSlice';
 
 export const articleDetailsPageReducer = combineReducers({
-    articleDetails: ArticleDetailRecommendationsReducer,
+    ArticleDetailRecommendations: ArticleDetailRecommendationsReducer,
     articleDetailsComments: ArticleDetailCommentsReducer,
 });

@@ -12,7 +12,7 @@ export const defaultAsyncReducers: ReducersList = {
     profile: profileReducer,
     addComment: addCommentReducer,
     articleDetails: articleDetailsReducer,
-    articleDetailsPage: articleDetailsPageReducer
+    articleDetailsPage: articleDetailsPageReducer,
 }
 
 export const StoreDecorator = (

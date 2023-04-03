@@ -6,6 +6,9 @@ import { LoginModal } from 'features/AuthByUserName';
 import { useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
 import { useAppDispatch } from 'helpers/hooks';
+import { Text } from 'shared/ui/Text';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import cls from './NavBar.module.scss';
 
 interface NavBarProps {
@@ -33,7 +36,19 @@ export const NavBar = memo(({ className }: NavBarProps) => {
     if (userData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
-                <h2>{t('logo')}</h2>
+                <Text className={cls.logo} title={t('logo')} />
+                <AppLink
+                    to={RoutePath.article_create}
+                    className={cls.createArticleLink}
+                >
+                    <Button
+                        onClick={openModal}
+                        className={cls.links}
+                        variant={Variant.CLEAR_INVERTED}
+                    >
+                        {t('createArticle')}
+                    </Button>
+                </AppLink>
                 <Button
                     onClick={handleLogout}
                     className={cls.links}
