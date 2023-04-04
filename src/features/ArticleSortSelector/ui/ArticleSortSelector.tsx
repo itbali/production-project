@@ -30,6 +30,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     const sortByOptions = useMemo<SelectOption<ArticleSortView>[]>(() => [
         { value: ArticleSortView.CREATED_AT, content: t('createdAt') },
         { value: ArticleSortView.TITLE, content: t('title') },
+        { value: ArticleSortView.VIEWS, content: t('views') },
     ], [t]);
 
     return (
