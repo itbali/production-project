@@ -3,22 +3,22 @@ import { classNames } from 'helpers/classNames';
 import { LOCAL_STORAGE } from 'shared/const/LOCAL_STORAGE';
 import { useAppDispatch, useDebouncedCallback } from 'helpers/hooks';
 import { useSelector } from 'react-redux';
-import {
-    selectArticlesPageView,
-} from 'pages/ArticlesPage/model/selectors/selectArticlesPageView/selectArticlesPageView';
 import { ArticleViewSelector } from 'features/ViewSelector';
 import { useTranslation } from 'react-i18next';
 import { Card } from 'shared/ui/Card';
 import { Input } from 'shared/ui/Input';
 import { ArticleSortSelector } from 'features/ArticleSortSelector';
 import { ArticleSortView } from 'entities/Article';
-import {
-    selectArticlesPageSearchValue,
-} from 'pages/ArticlesPage/model/selectors/selectArticlesPageSearchValue/selectArticlesPageSearchValue';
-import { fetchArticles } from 'pages/ArticlesPage/model/services/fetchArticles/fetchArticles';
 import { TabItem } from 'shared/ui/Tabs/';
 import { ArticleType } from 'entities/Article/model/types/article';
 import { ArticleTypeTabs } from 'features/ArticleTypeTabs';
+import {
+    selectArticlesPageView,
+} from '../../model/selectors/selectArticlesPageView/selectArticlesPageView';
+import {
+    selectArticlesPageSearchValue,
+} from '../../model/selectors/selectArticlesPageSearchValue/selectArticlesPageSearchValue';
+import { fetchArticles } from '../../model/services/fetchArticles/fetchArticles';
 import { ArticlesPageActions } from '../../model/slice/articlePageSlice';
 import cls from './ArticlePageFilters.module.scss';
 import {

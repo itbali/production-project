@@ -1,8 +1,8 @@
 import { classNames } from 'helpers/classNames';
 import { MouseEvent, useCallback } from 'react';
-import { Button, Variant } from 'shared/ui/Button';
-import { Icon } from 'shared/ui/Icon';
-import CopyIcon from 'shared/assets/icons/copy.svg';
+import { Button, Variant } from '../../Button';
+import { Icon } from '../../Icon';
+import CopyIcon from '../../../assets/icons/copy.svg';
 import cls from './Code.module.scss';
 
 interface CodeProps {

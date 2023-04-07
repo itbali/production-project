@@ -1,7 +1,5 @@
-import {
-    getArticleRecommendations,
-} from 'pages/ArticleDetailPage/model/selectors/recommendations/getArticleRecommendations/getArticleRecommendations';
 import { createSelector } from '@reduxjs/toolkit';
+import { getArticleRecommendations } from '../getArticleRecommendations/getArticleRecommendations';
 
 export const selectArticleRecommendationsError = createSelector(
     getArticleRecommendations,

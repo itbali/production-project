@@ -18,7 +18,6 @@ export const fetchArticleById = createAsyncThunk<Article, string, ThunkConfig<st
                 throw new Error('No data');
             }
 
-            console.log(response.data);
             return response.data;
         } catch (error) {
             if (axios.isAxiosError(error)) {

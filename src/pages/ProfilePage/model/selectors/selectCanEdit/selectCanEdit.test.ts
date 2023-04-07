@@ -1,5 +1,5 @@
-import { selectCanEdit } from 'pages/ProfilePage/model/selectors/selectCanEdit/selectCanEdit';
 import { StateSchema } from 'app/providers/storeProvider';
+import { selectCanEdit } from './selectCanEdit';
 
 describe('selectCanEdit', () => {
     it('should return true if the user is the owner of the profile', () => {

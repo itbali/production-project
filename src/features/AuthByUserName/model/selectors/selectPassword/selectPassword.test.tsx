@@ -1,7 +1,5 @@
-import {
-    selectPassword,
-} from 'features/AuthByUserName/model/selectors/selectPassword/selectPassword';
 import { StateSchema } from 'app/providers/storeProvider';
+import { selectPassword } from '../selectPassword/selectPassword';
 
 describe('selectPassword should', () => {
     it(' return password if provided', () => {

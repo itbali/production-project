@@ -1,7 +1,5 @@
-import {
-    selectUsername,
-} from 'features/AuthByUserName/model/selectors/selectUsername/selectUsername';
 import { StateSchema } from 'app/providers/storeProvider';
+import { selectUsername } from '../selectUsername/selectUsername';
 
 describe('selectUsername should', () => {
     it(' return username if provided', () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, screen } from '@testing-library/react';
-import { SideBar } from 'widgets/SideBar';
 import { rendererWithMocks } from 'helpers/tests/renderWithMocks';
+import { SideBar } from './SideBar';
 
 describe('Sidebar should ', () => {
     it('be rendered', () => {

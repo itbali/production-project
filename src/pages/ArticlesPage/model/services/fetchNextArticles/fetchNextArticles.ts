@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/storeProvider';
-import { ArticlesPageActions } from 'pages/ArticlesPage/model/slice/articlePageSlice';
-import { fetchArticles } from 'pages/ArticlesPage/model/services/fetchArticles/fetchArticles';
+import { ArticlesPageActions } from '../../slice/articlePageSlice';
+import { fetchArticles } from '../../services/fetchArticles/fetchArticles';
 import { selectArticlesHasMore } from '../../selectors/selectArticlesHasMore/selectArticlesHasMore';
 import {
     selectArticlesPageNumber,

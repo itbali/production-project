@@ -1,15 +1,5 @@
 .link {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 10px;
-    align-items: center;
-    justify-content: flex-start;
-
-    height: 34px;
-    padding-top: 10px;
-
     font: var(--font-s);
-
     transition: 0.3s;
 
     &.collapsed {

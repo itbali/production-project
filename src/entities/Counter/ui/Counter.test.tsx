@@ -1,6 +1,6 @@
-import { Counter } from 'entities/Counter';
 import { fireEvent, screen } from '@testing-library/react';
 import { rendererWithMocks } from 'helpers/tests/renderWithMocks';
+import { Counter } from './Counter';
 
 describe('Counter should', () => {
     it('', () => {

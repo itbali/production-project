@@ -1,8 +1,8 @@
 import { Comment } from 'entities/Comment';
-import { ArticleDetailCommentsSchema } from 'pages/ArticleDetailPage';
+import { ArticleDetailCommentsSchema } from '../types/ArticleDetailCommentsSchema';
 import {
     fetchCommentsByArticleId,
-} from 'pages/ArticleDetailPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { ArticleDetailCommentsReducer } from './ArticleDetailCommentsSlice';
 
 const comment: Comment = {

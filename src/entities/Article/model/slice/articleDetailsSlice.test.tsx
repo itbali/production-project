@@ -1,6 +1,6 @@
-import { ArticleDetailsSchema } from 'entities/Article';
 import { mockArticle } from 'shared/assets/test/mockedArticle';
-import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById';
+import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
+import { fetchArticleById } from '../services/fetchArticleById';
 import { articleDetailsReducer } from './articleDetailsSlice';
 
 const slice: ArticleDetailsSchema = {

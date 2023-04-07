@@ -553,6 +553,12 @@
       "userId": "1",
       "text": "No comment",
       "id": "WuNAK4w"
+    },
+    {
+      "articleId": "10",
+      "userId": "1",
+      "text": "First comment",
+      "id": "CCbOBbr"
     }
   ],
   "users": [

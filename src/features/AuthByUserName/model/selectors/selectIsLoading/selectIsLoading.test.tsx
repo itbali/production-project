@@ -1,7 +1,5 @@
-import {
-    selectIsLoading,
-} from 'features/AuthByUserName/model/selectors/selectIsLoading/selectIsLoading';
 import { StateSchema } from 'app/providers/storeProvider';
+import { selectIsLoading } from '../selectIsLoading/selectIsLoading';
 
 describe('selectIsLoading should', () => {
     it('return true if isLoading', () => {

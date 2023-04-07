@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { profileActions, selectProfileReadOnly, updateProfileData } from 'entities/Profile';
 import { useCallback } from 'react';
 import { useAppDispatch } from 'helpers/hooks';
-import cls from './ProfilePageHeader.module.scss';
+import { HStack } from 'shared/ui/Stack';
 import { selectCanEdit } from '../../model/selectors/selectCanEdit/selectCanEdit';
 
 interface ProfilePageHeaderProps {
@@ -28,10 +28,15 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
         dispatch(profileActions.cancelEdit());
     }, [dispatch]);
     return (
-        <div className={classNames(cls.header, {}, [className])}>
+        <HStack
+            className={classNames('', {}, [className])}
+            gap={16}
+            justify="space-between"
+            max
+        >
             <Text title={t('profile')} />
             {canEdit && (
-                <div className={cls.btnsWrapper}>
+                <HStack align="end" gap={8}>
                     {!readonly && (
                         <Button
                             onClick={onCancelEdit}
@@ -46,9 +51,8 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                     >
                         {t(readonly ? 'edit' : 'save')}
                     </Button>
-                </div>
+                </HStack>
             )}
-
-        </div>
+        </HStack>
     );
 };

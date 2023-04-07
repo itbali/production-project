@@ -1,7 +1,5 @@
 import { StateSchema } from 'app/providers/storeProvider';
-import {
-    selectArticlesError,
-} from 'pages/ArticlesPage/model/selectors/selectArticlesError/selectArticlesError';
+import { selectArticlesError } from '../selectArticlesError/selectArticlesError';
 
 describe('selectArticlesError', () => {
     it('should return the error', () => {

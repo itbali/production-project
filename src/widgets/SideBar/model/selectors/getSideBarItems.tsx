@@ -6,7 +6,7 @@ import ArticlesSVG from 'shared/assets/icons/article.svg';
 import ProfileSVG from 'shared/assets/icons/profile.svg';
 import AboutSVG from 'shared/assets/icons/about.svg';
 import React from 'react';
-import { SideBarItemType } from 'widgets/SideBar/model/types/SideBarItemType';
+import { SideBarItemType } from '../types/SideBarItemType';
 
 export const getSideBarItems = createSelector(
     getUserAuthData,

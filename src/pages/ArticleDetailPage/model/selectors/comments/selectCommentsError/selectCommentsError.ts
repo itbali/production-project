@@ -1,7 +1,5 @@
-import {
-    getArticleDetailsComments,
-} from 'pages/ArticleDetailPage/model/selectors/comments/getArticleDetailsComments/getArticleDetailsComments';
 import { createSelector } from '@reduxjs/toolkit';
+import { getArticleDetailsComments } from '../getArticleDetailsComments/getArticleDetailsComments';
 
 export const selectCommentsError = createSelector(
     getArticleDetailsComments,

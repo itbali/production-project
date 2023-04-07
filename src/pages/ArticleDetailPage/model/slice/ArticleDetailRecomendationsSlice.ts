@@ -38,10 +38,11 @@ export const ArticleDetailRecommendationsSlice = createSlice({
 });
 
 export const {
-    selectAll: selectAllArticleDetailRecommendations,
+    selectAll: selectAllRecommendations,
 } = recommendationsAdapter.getSelectors<StateSchema>(
     (state: StateSchema) => (
-        state.articleDetailsPage?.articleRecommendations || recommendationsAdapter.getInitialState()
+        state.articleDetailsPage?.ArticleDetailRecommendations
+        || recommendationsAdapter.getInitialState()
     ),
 );
 export const {

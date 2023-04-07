@@ -5,6 +5,7 @@ import { Text } from 'shared/ui/Text';
 import { Skeleton } from 'shared/ui/Skeleton';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { HStack, VStack } from 'shared/ui/Stack';
 import cls from './CommentCard.module.scss';
 import { Comment } from '../../model/types/comment';
 
@@ -31,12 +32,19 @@ export const CommentCard = memo((props: CommentCardProps) => {
     if (!comment) return null;
 
     return (
-        <div className={classNames(cls.CommentCard, {}, [className])}>
-            <AppLink to={RoutePath.profile + comment.user.id} className={cls.header}>
-                {comment.user?.avatar && <Avatar size="small" src={comment.user.avatar} />}
-                <Text className={cls.username} title={comment.user.username} size="small" />
+        <VStack
+            max
+            gap={8}
+            align="start"
+            className={classNames(cls.CommentCard, {}, [className])}
+        >
+            <AppLink to={RoutePath.profile + comment.user.id}>
+                <HStack gap={8} justify="start" max>
+                    {comment.user?.avatar && <Avatar size="small" src={comment.user.avatar} />}
+                    <Text className={cls.username} title={comment.user.username} size="small" />
+                </HStack>
             </AppLink>
             <Text className={cls.text} text={comment?.text} />
-        </div>
+        </VStack>
     );
 });

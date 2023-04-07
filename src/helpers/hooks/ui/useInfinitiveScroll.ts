@@ -11,7 +11,7 @@ export const useInfinitiveScroll = (props: useInfinitiveScrollProps) => {
 
     useEffect(() => {
         if (!triggerRef || !wrapperRef || !onIntersect) {
-            return console.warn('some of props is undefined: ', { triggerRef, wrapperRef, onIntersect });
+            return;
         }
 
         const options = {
@@ -26,8 +26,6 @@ export const useInfinitiveScroll = (props: useInfinitiveScrollProps) => {
         }, options);
 
         observer.observe(triggerRef.current);
-        return () => {
-            observer.disconnect();
-        };
+        return () => observer.disconnect();
     }, [onIntersect, triggerRef, wrapperRef]);
 };

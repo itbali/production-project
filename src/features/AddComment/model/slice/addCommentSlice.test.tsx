@@ -1,4 +1,4 @@
-import { AddCommentSchema } from 'features/AddComment';
+import { AddCommentSchema } from '../types/AddComment';
 import { addCommentReducer, addCommentSliceActions } from './addCommentSlice';
 
 describe('addCommentSlice should', () => {

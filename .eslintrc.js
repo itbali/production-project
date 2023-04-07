@@ -15,13 +15,18 @@ module.exports = {
     }
   }],
   parser: '@typescript-eslint/parser',
-  plugins: ['react', '@typescript-eslint'],
+  plugins: [
+      'react',
+    'dyuzhev-fsd-plugin',
+    '@typescript-eslint',
+  ],
   globals: {
     __IS_DEV__: true,
     __API__: true,
     __PROJECT__: true,
   },
   rules: {
+    'dyuzhev-fsd-plugin/path-checker': 'error',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/ban-ts-comment': 'warn',
@@ -40,6 +45,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'no-shadow': 'off',
     'no-param-reassign': 'off',
+    'consistent-return': 'off',
     indent: ['error', 4, {
       SwitchCase: 1
     }],

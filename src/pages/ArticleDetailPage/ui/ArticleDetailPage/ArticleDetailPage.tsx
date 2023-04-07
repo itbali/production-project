@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch, useInitialEffect } from 'helpers/hooks';
 import { AddComment } from 'features/AddComment';
 import { Page } from 'widgets/Page';
+import { selectAllRecommendations } from '../../model/slice/ArticleDetailRecomendationsSlice';
 import { ArticleDetailPageHeader } from '../ArticleDetailPageHeader/ArticleDetailPageHeader';
 import {
     fetchArticleRecommendations,
@@ -28,9 +29,6 @@ import {
 import {
     selectAreCommentsLoading,
 } from '../../model/selectors/comments/selectAreCommentsLoading/selectAreCommentsLoading';
-import {
-    selectAllArticleDetailRecommendations,
-} from '../../model/slice/ArticleDetailRecomendationsSlice';
 import {
     selectArticleRecommendationsLoading,
 } from '../../model/selectors/recommendations/selectArticleRecommendationsLoading/selectArticleRecommendationsLoading';
@@ -53,7 +51,7 @@ const ArticleDetailPage = (props: ArticleDetailPageProps) => {
     const error = useSelector(selectCommentsError);
     const isLoading = useSelector(selectAreCommentsLoading);
     const recommendationsIsLoading = useSelector(selectArticleRecommendationsLoading);
-    const recommendations = useSelector(selectAllArticleDetailRecommendations);
+    const recommendations = useSelector(selectAllRecommendations);
 
     useInitialEffect(() => {
         if (id) dispatch(fetchCommentsByArticleId(id));

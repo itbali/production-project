@@ -1,5 +1,5 @@
-import { selectError } from 'features/AuthByUserName/model/selectors/selectError/selectError';
 import { StateSchema } from 'app/providers/storeProvider';
+import { selectError } from '../selectError/selectError';
 
 describe('selectError should', () => {
     it('return error', () => {
