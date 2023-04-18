@@ -5,7 +5,7 @@ import { ArticlePageFilters } from './ArticlePageFilters';
 import { ThemeDecorator } from '../../../../../config/.storybook/decorators/themeDecorator';
 
 export default {
-    title: 'page/Article/ArticlePageFilters',
+    title: 'entities/Article/ArticlePageFilters',
     component: ArticlePageFilters,
     argTypes: {},
     args: {},

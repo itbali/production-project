@@ -6,7 +6,7 @@
     height: var(--navbar-height);
     padding: 20px;
 
-    background-color: var(--inverted-bg-color);
+    background-color: var(--secondary-bg-color);
 
     transition: 0.3s;
 
@@ -20,6 +20,7 @@
     }
 }
 
+.dropdown,
 .links {
     margin-left: auto;
 }

@@ -12,8 +12,8 @@ interface ArticleDetailsImageBlockProps {
 export const ArticleDetailsCodeBlock = memo((props: ArticleDetailsImageBlockProps) => {
     const { className, block } = props;
     return (
-        <div className={classNames(cls.ArticleDetailsCodeBlock, {}, [className])}>
+        <section className={classNames(cls.ArticleDetailsCodeBlock, {}, [className])}>
             <Code text={block.code} />
-        </div>
+        </section>
     );
 });

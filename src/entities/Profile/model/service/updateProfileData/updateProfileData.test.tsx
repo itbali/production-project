@@ -4,6 +4,8 @@ import { Country } from 'entities/Country';
 import { Profile, ValidateProfileErrors } from '../../types/profile';
 import { updateProfileData } from './updateProfileData';
 
+jest.mock('shared/ui/ListBox', () => ({}));
+
 describe('fetchProfileData should', () => {
     const data: Profile = {
         id: '1',

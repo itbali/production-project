@@ -4,6 +4,8 @@ import { StateSchema } from 'app/providers/storeProvider';
 import { Profile } from '../../types/profile';
 import { getProfile } from './getProfiled';
 
+jest.mock('shared/ui/ListBox', () => ({}));
+
 describe('getProfile should', () => {
     const profile: Profile = {
         first: 'John',

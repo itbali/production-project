@@ -1,0 +1,76 @@
+.HListBox {
+    position: relative;
+}
+
+.trigger {
+    cursor: pointer;
+
+    margin: 0;
+    padding: 0;
+
+    background: none;
+    border: none;
+}
+
+.options {
+    position: absolute;
+    z-index: 2;
+    min-width: 100%;
+    box-shadow: 4px 4px 8px var(--inverted-secondary-color);
+}
+
+.item {
+    cursor: pointer;
+    padding: 8px;
+    background: var(--options-bg);
+}
+
+.active {
+    background: var(--options-bg-active);
+}
+
+.selected {
+    background: var(--options-bg-soft);
+}
+
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.label {
+    pointer-events: none;
+
+    position: absolute;
+    left: 0;
+    transform-origin: top left;
+    transform: translateY(-60%) scale(0.8);
+
+    display: inline-block;
+
+    padding: 0 8px;
+
+    color: var(--primary-color-soft);
+
+    background: var(--card-bg);
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+}
+
+.optionsUpLeft {
+    right: 0;
+    bottom: 100%;
+}
+
+.optionsDownLeft {
+    top: 100%;
+    right: 100%;
+}
+
+.optionsUpRight {
+    bottom: 100%;
+}
+
+.optionsDownRight {
+    top: 100%;
+}

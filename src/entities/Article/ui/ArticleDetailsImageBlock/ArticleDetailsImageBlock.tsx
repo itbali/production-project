@@ -12,13 +12,13 @@ interface ArticleDetailsImageBlockProps {
 export const ArticleDetailsImageBlock = memo((props: ArticleDetailsImageBlockProps) => {
     const { className, block } = props;
     return (
-        <div className={classNames(cls.ArticleDetailsImageBlock, {}, [className])}>
+        <section className={classNames(cls.ArticleDetailsImageBlock, {}, [className])}>
             <img
                 className={cls.image}
                 src={block.src}
                 alt={block.title}
             />
             {block.title && <Text text={block.title} align="center" />}
-        </div>
+        </section>
     );
 });

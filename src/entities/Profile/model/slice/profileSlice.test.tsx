@@ -4,6 +4,8 @@ import { updateProfileData } from '../service/updateProfileData/updateProfileDat
 import { ProfileSchema, ValidateProfileErrors } from '../types/profile';
 import { profileActions, profileReducer } from './profileSlice';
 
+jest.mock('shared/ui/ListBox', () => ({}));
+
 const profile = {
     first: 'John',
     age: 25,

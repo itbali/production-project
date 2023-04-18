@@ -9,6 +9,8 @@ import { useAppDispatch } from 'helpers/hooks';
 import { Text } from 'shared/ui/Text';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Dropdown } from 'shared/ui/Dropdown';
+import { Avatar } from 'shared/ui/Avatar';
 import cls from './NavBar.module.scss';
 
 interface NavBarProps {
@@ -44,18 +46,27 @@ export const NavBar = memo(({ className }: NavBarProps) => {
                     <Button
                         onClick={openModal}
                         className={cls.links}
-                        variant={Variant.CLEAR_INVERTED}
+                        variant={Variant.CLEAR}
                     >
                         {t('createArticle')}
                     </Button>
                 </AppLink>
-                <Button
-                    onClick={handleLogout}
-                    className={cls.links}
-                    variant={Variant.CLEAR_INVERTED}
-                >
-                    {t('logout')}
-                </Button>
+                <Dropdown
+                    direction="down left"
+                    className={cls.dropdown}
+                    items={[
+                        {
+                            content: t('logout'),
+                            onClick: handleLogout,
+                        },
+                        {
+                            content: t('profile'),
+                            href: RoutePath.profile + userData.id,
+                        },
+                    ]}
+                    trigger={<Avatar size="small" src={userData.avatar || ''} />}
+                />
+
             </header>
         );
     }

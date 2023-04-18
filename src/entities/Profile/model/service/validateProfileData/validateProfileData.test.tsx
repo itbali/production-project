@@ -3,6 +3,8 @@ import { Currency } from 'entities/Currency';
 import { Profile, ValidateProfileErrors } from '../../types/profile';
 import { validateProfileData } from './validateProfileData';
 
+jest.mock('shared/ui/ListBox', () => ({}));
+
 describe('validateProfileData should', () => {
     const profile: Profile = {
         first: 'John',

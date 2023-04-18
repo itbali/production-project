@@ -6,3 +6,4 @@ storybook-static
 .eslintrc.js
 babel.config.json
 webpack.config.ts
+__mock__

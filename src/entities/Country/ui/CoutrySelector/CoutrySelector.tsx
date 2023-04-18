@@ -1,7 +1,6 @@
-import { classNames } from 'helpers/classNames';
-import { Select } from 'shared/ui/Select';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { HListBox } from 'shared/ui/ListBox';
 import { Country } from '../../model/types/country';
 
 interface CountrySelectorProps {
@@ -31,13 +30,15 @@ export const CountrySelector = (props: CountrySelectorProps) => {
     }, [onChange]);
 
     return (
-        <Select
+        <HListBox
             label={t('country')}
-            readonly={readonly}
+            items={countryOptions}
             value={value}
-            options={countryOptions}
             onChange={onSelectChange}
-            className={classNames('', {}, [className])}
+            className={className}
+            defaultValue={countryOptions[0].value}
+            disabled={readonly}
+            direction="up right"
         />
     );
 };

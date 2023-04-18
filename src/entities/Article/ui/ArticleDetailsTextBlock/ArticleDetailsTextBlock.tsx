@@ -12,11 +12,11 @@ interface ArticleDetailsTextBlockProps {
 export const ArticleDetailsTextBlock = memo((props: ArticleDetailsTextBlockProps) => {
     const { className, block } = props;
     return (
-        <div className={classNames(cls.ArticleDetailsTextBlock, {}, [className])}>
+        <section className={classNames(cls.ArticleDetailsTextBlock, {}, [className])}>
             {block.title && <Text title={block.title} className={cls.title} />}
             {block.paragraphs.map(
                 (p, index) => <Text key={p} text={p} className={cls.paragraph} />,
             )}
-        </div>
+        </section>
     );
 });

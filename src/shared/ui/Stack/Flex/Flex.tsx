@@ -1,18 +1,21 @@
-import { memo, ReactNode } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import { classNames } from 'helpers/classNames';
 import cls from './Flex.module.scss';
 
 type Justify = 'start' | 'end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
 type Align = 'start' | 'end' | 'center' | 'stretch' | 'baseline';
 type Direction = 'row' | 'row-reverse' | 'column' | 'column-reverse';
+type Gap = 4 | 8 | 12 | 16 | 24;
 
-export interface FlexProps {
+type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+
+export interface FlexProps extends DivProps {
     className?: string,
     children: ReactNode,
     justify?: Justify,
     align?: Align,
     direction?: Direction,
-    gap?: 4 | 8 | 12 | 16 | 24,
+    gap?: Gap,
     max?: boolean,
 }
 
@@ -45,7 +48,7 @@ const gapMap = {
     24: cls.Gap24,
 };
 
-export const Flex = memo((props: FlexProps) => {
+export const Flex = (props: FlexProps) => {
     const {
         gap,
         max,
@@ -59,16 +62,16 @@ export const Flex = memo((props: FlexProps) => {
     const mods = {
         [cls.max]: max,
     };
+    const classes = [
+        className,
+        justifyMap[justify],
+        alignMap[align],
+        directionMap[direction],
+        gap && gapMap[gap],
+    ];
     return (
-        <div className={classNames(cls.Flex, mods, [
-            className,
-            justifyMap[justify],
-            alignMap[align],
-            directionMap[direction],
-            gap && gapMap[gap],
-        ])}
-        >
+        <div className={classNames(cls.Flex, mods, classes)}>
             {children}
         </div>
     );
-});
+};
