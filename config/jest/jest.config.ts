@@ -31,6 +31,13 @@ export default {
     testMatch: [
         '<rootDir>src/**/*(*.)@(spec|test).[jt]s?(x)',
     ],
+    reporters: [
+        "default",
+        ["<rootDir>node_modules/jest-html-reporter", {
+            outputPath: "<rootDir>reports/jest-report.html",
+            pageTitle: "Jest Report"
+        }]
+        ],
     // roots: [
     //     '<rootDir>',
     // ],
@@ -115,9 +122,6 @@ export default {
 
     // Run tests from one or more projects
     // projects: undefined,
-
-    // Use this configuration option to add custom reporters to Jest
-    // reporters: undefined,
 
     // Automatically reset mock state before every test
     // resetMocks: false,
