@@ -3,10 +3,16 @@ import { Text } from 'shared/ui/Text';
 import { Button, Variant } from 'shared/ui/Button';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { profileActions, selectProfileReadOnly, updateProfileData } from 'entities/Profile';
 import { useCallback } from 'react';
 import { useAppDispatch } from 'helpers/hooks';
 import { HStack } from 'shared/ui/Stack';
+import { profileActions } from 'features/EditableProfileCard/model/slice/profileSlice';
+import {
+    updateProfileData,
+} from 'features/EditableProfileCard/model/service/updateProfileData/updateProfileData';
+import {
+    selectProfileReadOnly,
+} from 'features/EditableProfileCard/model/selectors/selectProfileReadOnly/selectProfileReadOnly';
 import { selectCanEdit } from '../../model/selectors/selectCanEdit/selectCanEdit';
 
 interface ProfilePageHeaderProps {

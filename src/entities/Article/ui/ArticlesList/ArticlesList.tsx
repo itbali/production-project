@@ -42,14 +42,14 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
         />
     );
 
-    if (!articles.length && !isLoading) {
+    if (!articles?.length && !isLoading) {
         return (
             <Text text={t('NoArticles')} />
         );
     }
     return (
         <div className={classNames('', {}, [className, cls[view]])}>
-            {articles.map((article) => (
+            {articles?.map((article) => (
                 renderArticle(article)
             ))}
             {isLoading && (
