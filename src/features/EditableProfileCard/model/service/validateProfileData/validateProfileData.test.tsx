@@ -4,8 +4,6 @@ import { Profile } from 'entities/Profile';
 import { ValidateProfileErrors } from '../../types/EditableProfileCardTypes';
 import { validateProfileData } from './validateProfileData';
 
-jest.mock('shared/ui/ListBox', () => ({}));
-
 describe('validateProfileData should', () => {
     const profile: Profile = {
         first: 'John',

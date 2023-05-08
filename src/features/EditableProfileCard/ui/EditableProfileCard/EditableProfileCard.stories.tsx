@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from 'app/providers/themeProvider';
 import { EditableProfileCard } from './EditableProfileCard';
-import { ThemeDecorator } from '../../../../config/.storybook/decorators/themeDecorator';
+import { ThemeDecorator } from '../../../../../config/.storybook/decorators/themeDecorator';
 
 export default {
     title: 'path/EditableProfileCard',

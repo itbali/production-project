@@ -4,7 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { Button, Variant } from 'shared/ui/Button';
 import { LoginModal } from 'features/AuthByUserName';
 import { useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+    getUserAuthData, selectIsAdmin, selectIsManager, userActions,
+} from 'entities/User';
 import { useAppDispatch } from 'helpers/hooks';
 import { Text } from 'shared/ui/Text';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
@@ -21,6 +23,8 @@ export const NavBar = memo(({ className }: NavBarProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const userData = useSelector(getUserAuthData);
+    const isAdmin = useSelector(selectIsAdmin);
+    const isManager = useSelector(selectIsManager);
     const [isAuthModalOpened, setIsAuthModalOpened] = useState(false);
 
     const openModal = useCallback(() => {
@@ -34,6 +38,8 @@ export const NavBar = memo(({ className }: NavBarProps) => {
     const handleLogout = useCallback(() => {
         dispatch(userActions.logoutUser());
     }, [dispatch]);
+
+    const isAdminPanelAvailable = isAdmin || isManager;
 
     if (userData) {
         return (
@@ -55,13 +61,19 @@ export const NavBar = memo(({ className }: NavBarProps) => {
                     direction="down left"
                     className={cls.dropdown}
                     items={[
-                        {
-                            content: t('logout'),
-                            onClick: handleLogout,
-                        },
+                        ...(isAdminPanelAvailable
+                            ? [{
+                                content: t('admin-panel'),
+                                href: RoutePath.admin_panel,
+                            }]
+                            : []),
                         {
                             content: t('profile'),
                             href: RoutePath.profile + userData.id,
+                        },
+                        {
+                            content: t('logout'),
+                            onClick: handleLogout,
                         },
                     ]}
                     trigger={<Avatar size="small" src={userData.avatar || ''} />}

@@ -7,6 +7,7 @@ import { Avatar } from 'shared/ui/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelector } from 'entities/Country';
 import { HStack, VStack } from 'shared/ui/Stack';
+import { testIds } from 'shared/const/testIds';
 import cls from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
 
@@ -85,12 +86,14 @@ export const ProfileCard = (props: ProfileCardProps) => {
                                     value={data.first}
                                     onChange={onChangeFirstName}
                                     readonly={readonly}
+                                    data-testid={`${testIds.ProfileCard}.firstName`}
                                 />
                                 <Input
                                     placeholder={t('lastName')}
                                     value={data.lastname}
                                     onChange={onChangeLastName}
                                     readonly={readonly}
+                                    data-testid={`${testIds.ProfileCard}.lastName`}
                                 />
                                 <Input
                                     type="number"
@@ -98,6 +101,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                                     value={data.age}
                                     onChange={onChangeAge}
                                     readonly={readonly}
+                                    data-testId={`${testIds.ProfileCard}.age`}
                                 />
                                 <Input
                                     placeholder={t('city')}

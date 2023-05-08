@@ -3,8 +3,6 @@ import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { selectProfileFormData } from './selectProfileFormData';
 
-jest.mock('shared/ui/ListBox', () => ({}));
-
 describe('selectProfileFormData should', () => {
     const state = {
         profile: {

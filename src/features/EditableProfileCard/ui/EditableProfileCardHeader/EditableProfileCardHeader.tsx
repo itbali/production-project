@@ -6,20 +6,17 @@ import { useSelector } from 'react-redux';
 import { useCallback } from 'react';
 import { useAppDispatch } from 'helpers/hooks';
 import { HStack } from 'shared/ui/Stack';
-import { profileActions } from 'features/EditableProfileCard/model/slice/profileSlice';
-import {
-    updateProfileData,
-} from 'features/EditableProfileCard/model/service/updateProfileData/updateProfileData';
-import {
-    selectProfileReadOnly,
-} from 'features/EditableProfileCard/model/selectors/selectProfileReadOnly/selectProfileReadOnly';
+import { testIds } from 'shared/const/testIds';
 import { selectCanEdit } from '../../model/selectors/selectCanEdit/selectCanEdit';
+import { profileActions } from '../../model/slice/profileSlice';
+import { updateProfileData } from '../../model/service/updateProfileData/updateProfileData';
+import { selectProfileReadOnly } from '../../model/selectors/selectProfileReadOnly/selectProfileReadOnly';
 
 interface ProfilePageHeaderProps {
     className?: string,
 }
 
-export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
+export const EditableProfileCardHeader = ({ className }: ProfilePageHeaderProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const readonly = useSelector(selectProfileReadOnly);
@@ -47,6 +44,7 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                         <Button
                             onClick={onCancelEdit}
                             variant={Variant.ERROR}
+                            data-testid={`${testIds.EditableProfileCard}.cancelEdit`}
                         >
                             {t('reset')}
                         </Button>
@@ -54,6 +52,7 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                     <Button
                         onClick={onEditClick}
                         variant={Variant.OUTLINE}
+                        data-testid={`${testIds.EditableProfileCard}.edit`}
                     >
                         {t(readonly ? 'edit' : 'save')}
                     </Button>

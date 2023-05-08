@@ -7,21 +7,24 @@ import { Text } from 'shared/ui/Text';
 import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader, ReducersList } from 'helpers/components/DynamicModuleLoader';
 import { ProfileCard } from 'entities/Profile';
-import { ValidateProfileErrors } from '../model/types/EditableProfileCardTypes';
-import { selectProfileValidateErrors } from '../model/selectors/selectProfileValidateErrors/selectValidateProfileErrors';
+import { VStack } from 'shared/ui/Stack';
+import { testIds } from 'shared/const/testIds';
+import { ValidateProfileErrors } from '../../model/types/EditableProfileCardTypes';
+import { selectProfileValidateErrors } from '../../model/selectors/selectProfileValidateErrors/selectValidateProfileErrors';
 import {
     profileActions,
     profileReducer,
-} from '../model/slice/profileSlice';
-import { selectProfileError } from '../model/selectors/selectProfileError/selectProfileError';
-import { selectProfileData } from '../model/selectors/selectProfileData/selectProfileData';
-import { selectProfileIsLoading } from '../model/selectors/selectProfileIsLoading/SelectProfileIsLoading';
-import { selectProfileReadOnly } from '../model/selectors/selectProfileReadOnly/selectProfileReadOnly';
-import { fetchProfileData } from '../model/service/fetchProfileData/fetchProfileData';
+} from '../../model/slice/profileSlice';
+import { selectProfileError } from '../../model/selectors/selectProfileError/selectProfileError';
+import { selectProfileData } from '../../model/selectors/selectProfileData/selectProfileData';
+import { selectProfileIsLoading } from '../../model/selectors/selectProfileIsLoading/SelectProfileIsLoading';
+import { selectProfileReadOnly } from '../../model/selectors/selectProfileReadOnly/selectProfileReadOnly';
+import { fetchProfileData } from '../../model/service/fetchProfileData/fetchProfileData';
+import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 
 interface EditableProfileCardProps {
     className?: string,
-    id?: string,
+    id: string,
 }
 
 const reducers: ReducersList = {
@@ -75,29 +78,39 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     }, [dispatch]);
 
     useInitialEffect(() => {
-        if (id) dispatch(fetchProfileData(id));
+        dispatch(fetchProfileData(id));
     });
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            {errors && errors.map((error) => (
-                <Text key={error} align="center" variant="error" text={validateErrorsMap[error]} />
-            ))}
-            <ProfileCard
-                className={className}
-                data={data}
-                isLoading={isLoading}
-                error={error}
-                onChangeFirstName={onChangeProfileFirstName}
-                onChangeLastName={onChangeProfileLastName}
-                onChangeAge={onChangeProfileAge}
-                onChangeCity={onChangeProfileCity}
-                onChangeUserName={onChangeUserName}
-                onChangeAvatar={onChangeAvatar}
-                onChangeCurrency={onChangeProfileCurrency}
-                onChangeCountry={onChangeProfileCountry}
-                readonly={readonly}
-            />
+            <VStack gap={12} max>
+                <EditableProfileCardHeader />
+                {errors && errors.map((error) => (
+                    <Text
+                        data-testid={`${testIds.EditableProfileCard}.header`}
+                        key={error}
+                        align="center"
+                        variant="error"
+                        text={validateErrorsMap[error]}
+                    />
+                ))}
+                <ProfileCard
+                    data-testid={testIds.EditableProfileCard}
+                    className={className}
+                    data={data}
+                    isLoading={isLoading}
+                    error={error}
+                    onChangeFirstName={onChangeProfileFirstName}
+                    onChangeLastName={onChangeProfileLastName}
+                    onChangeAge={onChangeProfileAge}
+                    onChangeCity={onChangeProfileCity}
+                    onChangeUserName={onChangeUserName}
+                    onChangeAvatar={onChangeAvatar}
+                    onChangeCurrency={onChangeProfileCurrency}
+                    onChangeCountry={onChangeProfileCountry}
+                    readonly={readonly}
+                />
+            </VStack>
         </DynamicModuleLoader>
     );
 });

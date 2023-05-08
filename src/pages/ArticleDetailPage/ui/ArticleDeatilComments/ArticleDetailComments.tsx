@@ -5,7 +5,7 @@ import { CommentList } from 'entities/Comment';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { VStack } from 'shared/ui/Stack';
-import { useAppDispatch } from 'helpers/hooks';
+import { useAppDispatch, useInitialEffect } from 'helpers/hooks';
 import { selectAllComments } from '../../model/slice/ArticleDetailCommentsSlice';
 import { selectCommentsError } from '../../model/selectors/comments/selectCommentsError/selectCommentsError';
 import { selectAreCommentsLoading } from '../../model/selectors/comments/selectAreCommentsLoading/selectAreCommentsLoading';
@@ -30,6 +30,10 @@ export const ArticleDetailComments = memo((props: ArticleDetailCommentsProps) =>
         dispatch(addCommentForArticle({ text, articleId: id }));
         dispatch(fetchCommentsByArticleId(id));
     }, [dispatch, id]);
+
+    useInitialEffect(() => {
+        if (id) dispatch(fetchCommentsByArticleId(id));
+    });
 
     return (
         <VStack gap={8}>

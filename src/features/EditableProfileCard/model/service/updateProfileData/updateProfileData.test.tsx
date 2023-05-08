@@ -5,8 +5,6 @@ import { Profile } from 'entities/Profile';
 import { ValidateProfileErrors } from '../../types/EditableProfileCardTypes';
 import { updateProfileData } from './updateProfileData';
 
-jest.mock('shared/ui/ListBox', () => ({}));
-
 describe('fetchProfileData should', () => {
     const data: Profile = {
         id: '1',
