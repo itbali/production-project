@@ -5,7 +5,7 @@ import { ArticleTypeTabs } from './ArticleTypeTabs';
 import { ThemeDecorator } from '../../../../config/.storybook/decorators/themeDecorator';
 
 export default {
-    title: 'entities/Article/ArticleTypeTabs',
+    title: 'features/Article/ArticleTypeTabs',
     component: ArticleTypeTabs,
     argTypes: {},
     args: {},

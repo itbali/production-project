@@ -2,7 +2,9 @@ import { TestAsyncThunk } from 'helpers/tests/testAsyncThunk';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Profile } from 'entities/Profile';
-import { ValidateProfileErrors } from '../../types/EditableProfileCardTypes';
+import {
+    ValidateProfileErrors,
+} from '../../consts/ValidateProfileErrors';
 import { updateProfileData } from './updateProfileData';
 
 describe('fetchProfileData should', () => {

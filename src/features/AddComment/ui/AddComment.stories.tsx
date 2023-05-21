@@ -6,7 +6,7 @@ import { ThemeDecorator } from '../../../../config/.storybook/decorators/themeDe
 import { StoreDecorator } from '../../../../config/.storybook/decorators/storeDecorator';
 
 export default {
-    title: 'entities/Comments/AddComment',
+    title: 'features/Comments/AddComment',
     component: AddComment,
     argTypes: {
         onSendComment: { action: 'onSendComment' },

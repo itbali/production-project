@@ -5,10 +5,12 @@ import { EditableProfileCard } from './EditableProfileCard';
 import { ThemeDecorator } from '../../../../../config/.storybook/decorators/themeDecorator';
 
 export default {
-    title: 'path/EditableProfileCard',
+    title: 'TODO/EditableProfileCard',
     component: EditableProfileCard,
     argTypes: {},
-    args: {},
+    args: {
+        id: '1',
+    },
 } as ComponentMeta<typeof EditableProfileCard>;
 
 const Template: ComponentStory<typeof EditableProfileCard> = (

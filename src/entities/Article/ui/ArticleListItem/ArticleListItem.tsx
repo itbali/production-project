@@ -39,7 +39,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             <div {...bindHover} className={classNames('', {}, [className, cls[view]])}>
                 <Card>
                     <div className={cls.header}>
-                        <Avatar size="small" src={article.user.avatar!} alt={article.user.username} />
+                        {article.user.avatar && <Avatar size="small" src={article.user.avatar} alt={article.user.username} />}
                         <Text text={article.user.username} className={cls.username} />
                         <Text text={article.createdAt} className={cls.date} />
                     </div>

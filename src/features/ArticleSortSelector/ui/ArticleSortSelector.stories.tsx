@@ -5,7 +5,7 @@ import { ArticleSortSelector } from './ArticleSortSelector';
 import { ThemeDecorator } from '../../../../config/.storybook/decorators/themeDecorator';
 
 export default {
-    title: 'entities/Article/ArticleSortSelector',
+    title: 'features/Article/ArticleSortSelector',
     component: ArticleSortSelector,
     argTypes: {},
     args: {},

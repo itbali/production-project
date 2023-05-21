@@ -1,7 +1,9 @@
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import { Profile } from 'entities/Profile';
-import { ValidateProfileErrors } from '../../types/EditableProfileCardTypes';
+import {
+    ValidateProfileErrors,
+} from '../../consts/ValidateProfileErrors';
 import { validateProfileData } from './validateProfileData';
 
 describe('validateProfileData should', () => {

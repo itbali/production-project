@@ -30,6 +30,7 @@
   "error": "error",
   "firstName": "",
   "firstNameError": "firstNameError",
+  "forbidden-page": "forbidden-page",
   "increment": "",
   "it": "",
   "language": "language",

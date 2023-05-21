@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { LOCAL_STORAGE } from 'shared/const/LOCAL_STORAGE';
-import { Theme, ThemeContext } from './ThemeContext';
+import { Theme } from 'app/providers/themeProvider/consts/EnumTheme';
+import { ThemeContext } from './ThemeContext';
 
 export interface UseThemeResult {
     theme: Theme;

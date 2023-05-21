@@ -18,5 +18,6 @@ const config: StorybookConfig = {
             }
         }
     },
+    staticDirs:['../../public']
 }
 module.exports = config

@@ -1,10 +1,5 @@
 import React from 'react';
-
-export enum Theme {
-    LIGHT = 'light',
-    DARK = 'dark',
-    GREEN = 'green',
-}
+import { Theme } from 'app/providers/themeProvider/consts/EnumTheme';
 
 export interface ThemeContextProps {
     theme?: Theme;

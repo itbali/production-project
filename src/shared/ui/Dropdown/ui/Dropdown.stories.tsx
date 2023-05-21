@@ -13,21 +13,15 @@ export default {
         items: [
             {
                 content: 'Item 1 long long long',
-                onClick: () => {
-                    console.log('click');
-                },
+                onClick: () => 'click',
             },
             {
                 content: 'Item 2 long long long',
-                onClick: () => {
-                    console.log('click');
-                },
+                onClick: () => 'click',
             },
             {
                 content: 'Item 3 long long long',
-                onClick: () => {
-                    console.log('click');
-                },
+                onClick: () => 'click',
             },
         ],
         trigger: <Button>MENU</Button>,

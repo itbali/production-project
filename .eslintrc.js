@@ -27,6 +27,7 @@ module.exports = {
   },
   rules: {
     'dyuzhev-fsd-plugin/path-checker': 'error',
+    'linebreak-style': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/ban-ts-comment': 'warn',

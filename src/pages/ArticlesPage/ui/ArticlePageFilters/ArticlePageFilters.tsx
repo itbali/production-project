@@ -8,9 +8,8 @@ import { useTranslation } from 'react-i18next';
 import { Card } from 'shared/ui/Card';
 import { Input } from 'shared/ui/Input';
 import { ArticleSortSelector } from 'features/ArticleSortSelector';
-import { ArticleSortView } from 'entities/Article';
+import { ArticleSortView, ArticleType } from 'entities/Article';
 import { TabItem } from 'shared/ui/Tabs/';
-import { ArticleType } from 'entities/Article/model/types/article';
 import { ArticleTypeTabs } from 'features/ArticleTypeTabs';
 import {
     selectArticlesPageView,

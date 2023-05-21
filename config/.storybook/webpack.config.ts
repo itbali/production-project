@@ -28,7 +28,7 @@ module.exports = async ({ config } : { config: webpack.Configuration }) => {
     config.module!.rules!.push(buildScssLoader(true))
     config.plugins!.push(new webpack.DefinePlugin({
         __IS_DEV__: JSON.stringify(true),
-        __API__: JSON.stringify(''),
+        __API__: JSON.stringify('HTTPS://localhost:2000'),
         __PROJECT__: JSON.stringify('storybook'),
     }))
     return config

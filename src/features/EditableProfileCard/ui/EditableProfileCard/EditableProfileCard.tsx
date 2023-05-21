@@ -9,7 +9,9 @@ import { DynamicModuleLoader, ReducersList } from 'helpers/components/DynamicMod
 import { ProfileCard } from 'entities/Profile';
 import { VStack } from 'shared/ui/Stack';
 import { testIds } from 'shared/const/testIds';
-import { ValidateProfileErrors } from '../../model/types/EditableProfileCardTypes';
+import {
+    ValidateProfileErrors,
+} from '../../model/consts/ValidateProfileErrors';
 import { selectProfileValidateErrors } from '../../model/selectors/selectProfileValidateErrors/selectValidateProfileErrors';
 import {
     profileActions,

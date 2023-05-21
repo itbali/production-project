@@ -5,7 +5,7 @@ import { ArticleViewSelector } from './ArticleViewSelector';
 import { ThemeDecorator } from '../../../../config/.storybook/decorators/themeDecorator';
 
 export default {
-    title: 'entities/Article/ArticleViewSelector',
+    title: 'features/Article/ArticleViewSelector',
     component: ArticleViewSelector,
     argTypes: {},
     args: {},
